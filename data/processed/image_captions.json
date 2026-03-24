@@ -1,0 +1,104 @@
+[
+  {
+    "page": 3,
+    "image_index": 1,
+    "filename": "page_003_img_1.png",
+    "caption": "La imagen representa un diagrama de flujo simple. En la parte superior, hay un rectángulo que indica un inicio, seguido de un rombo que representa una decisión. Las salidas del rombo llevan a dos acciones diferentes, representadas por rectángulos. Cada acción se conecta de nuevo a un rectángulo de finalización. Las flechas indican el flujo de procesos, mostrando la dirección que se sigue desde el inicio hasta la decisión y luego hacia las acciones finales. Este tipo de diagrama se utiliza para visualizar pasos en un proceso o sistema, facilitando la comprensión de las decisiones y acciones a realizar."
+  },
+  {
+    "page": 3,
+    "image_index": 2,
+    "filename": "page_003_img_2.png",
+    "caption": "La imagen muestra una línea horizontal simple con un fondo difuminado que va de blanco a gris. La línea central es delgada y de color blanco, mientras que la parte inferior tiene un borde más oscuro que se difumina hacia el blanco. No hay otros elementos o componentes visibles en la imagen, lo que le da un aspecto minimalista y limpio. La ausencia de texto o gráficos adicionales indica que es un elemento decorativo o un separador visual en un diseño."
+  },
+  {
+    "page": 4,
+    "image_index": 1,
+    "filename": "page_004_img_1.png",
+    "caption": "El diagrama representa un flujo de trabajo en AWS para el procesamiento de documentos PDF mediante diversas herramientas y servicios. \n\n1. Un usuario autenticado envía documentos a un bucket de Amazon S3.\n2. Amazon EventBridge activa un AWS Lambda que envía mensajes a una cola de SQS.\n3. Otra función de Lambda (Queue Processor) procesa estos mensajes.\n4. Se utilizan AWS Step Functions para invocar un proyecto de Amazon Bedrock para la automatización de datos.\n5. Los resultados son procesados y resumidos mediante funciones Lambda.\n6. Amazon DynamoDB se utiliza para rastrear y contar eventos.\n7. Los resultados finales se almacenan en un bucket de S3 en formato JSON. \n\nEste flujo optimiza el manejo y análisis de documentos."
+  },
+  {
+    "page": 6,
+    "image_index": 1,
+    "filename": "page_006_img_1.png",
+    "caption": "La imagen muestra un botón rectangular con el texto \"Launch Stack\" en un color negro sobre un fondo naranja. El botón tiene un borde azul y una flecha blanca a la derecha, sugiriendo que al hacer clic, se activa una acción relacionada con el lanzamiento de un \"stack\". El estilo es pixelado, lo que indica un diseño gráfico retro o simplificado. No se pueden identificar otras relaciones o componentes, ya que se trata únicamente de un botón."
+  },
+  {
+    "page": 6,
+    "image_index": 2,
+    "filename": "page_006_img_2.png",
+    "caption": "La imagen muestra un botón rectangular con el texto \"Launch Stack\" en su interior. El fondo del botón es de color naranja con un borde azul. A la derecha del texto, hay un ícono en forma de triángulo apuntando a la derecha, que generalmente indica acción o inicio. Este tipo de botón se utiliza comúnmente en interfaces de usuario para iniciar una acción, como lanzar una aplicación o un conjunto de herramientas. Es un elemento interactivo diseñado para captar la atención del usuario y facilitar la navegación."
+  },
+  {
+    "page": 7,
+    "image_index": 1,
+    "filename": "page_007_img_1.png",
+    "caption": "La imagen muestra una interfaz de la consola GenAI IDP (Intelligent Document Processing) en su vista de carga de documentos. En la parte superior, hay un título que da la bienvenida al usuario. En el lado izquierdo, se encuentran herramientas como \"Document List\" y \"Upload Document(s)\". En el área principal, se puede observar un formulario para subir documentos, donde se puede especificar un prefijo de carpeta opcional. Se selecciona un archivo, \"lending_package.pdf\", y, al finalizar la carga, se muestra un mensaje de éxito indicando que el archivo se ha subido correctamente. También se incluye información sobre la implementación y la versión del sistema."
+  },
+  {
+    "page": 8,
+    "image_index": 1,
+    "filename": "page_008_img_1.png",
+    "caption": "La imagen muestra un flujo de procesamiento de documentos con un enfoque en la automatización de datos. En la parte superior, se proporciona una visión general de la ejecución, indicando que está en estado \"RUNNING\" (en ejecución) con una duración de 1 minuto y 50 segundos. El flujo de procesamiento incluye cinco pasos: \"InvokeDataAutomation\" y \"ProcessResultsStep\", que han sido completados con éxito; \"CheckHITLRequired\" y \"SummarizationChoice\", también exitosos; y \"SummarizationStep\", que actualmente está en ejecución. Los estados de cada paso están indicados con símbolos de colores: verde para completados, azul para en ejecución, rojo para fallidos y gris para pendientes."
+  },
+  {
+    "page": 8,
+    "image_index": 2,
+    "filename": "page_008_img_2.png",
+    "caption": "La imagen muestra un editor de documentos visual para un permiso de conducir de los Estados Unidos. En la parte izquierda, se visualiza la imagen del permiso con detalles como el nombre del titular y la fecha de expiración. A la derecha, se presenta un formulario con datos extraídos automáticamente, que incluye información sobre el color de los ojos, ciudad, código postal, estado y dirección. Cada campo tiene un porcentaje de confianza que indica la precisión de la información extraída. Al final, hay opciones para cancelar o finalizar la edición."
+  },
+  {
+    "page": 9,
+    "image_index": 1,
+    "filename": "page_009_img_1.png",
+    "caption": "La imagen muestra la interfaz de una consola de software llamada GenAI IDP, que parece ser un sistema de procesamiento de documentos. En el lateral izquierdo, hay herramientas como \"Document KB\" y opciones para subir documentos y configurar. En la parte central, se observa un área de preguntas y respuestas donde se consulta sobre la fecha de expiración de la licencia de conducir de Maria Garcia y el estado en que fue emitida. La interfaz incluye referencias a diferentes documentos (PDF) de donde se extraen las respuestas. Se observa información relevante sobre la versión del software y datos de implementación en la parte inferior izquierda."
+  },
+  {
+    "page": 10,
+    "image_index": 1,
+    "filename": "page_010_img_1.png",
+    "caption": "La imagen muestra a un hombre sonriendo frente a la cámara. Tiene cabello corto y usa gafas. Está vestido con una camisa de cuadros. El fondo es oscuro, lo que resalta su rostro y expresión amigable. No hay otros elementos o componentes en la imagen. La atmósfera es profesional y accesible."
+  },
+  {
+    "page": 10,
+    "image_index": 2,
+    "filename": "page_010_img_2.png",
+    "caption": "La imagen muestra a un hombre sonriendo con una barba corta y cabello castaño. Lleva una camisa de color claro sobre una camiseta oscura. El fondo es negro, lo que destaca su rostro y expresión amigable. No hay otros elementos o características adicionales en la imagen."
+  },
+  {
+    "page": 10,
+    "image_index": 3,
+    "filename": "page_010_img_3.png",
+    "caption": "La imagen muestra un retrato de una persona con cabello corto y oscuro, vistiendo una camiseta de color azul claro. El fondo es negro, lo que ayuda a resaltar la figura. La expresión facial es neutral, y la persona se ve centrada y enfocada en la cámara. No hay otros elementos ni decoraciones que distraigan, lo que indica que es un retrato formal o profesional."
+  },
+  {
+    "page": 10,
+    "image_index": 4,
+    "filename": "page_010_img_4.png",
+    "caption": "La imagen muestra a un hombre de mediana edad con cabello corto y una ligera barba, sonriendo. Lleva una camisa blanca y se encuentra frente a un fondo con plantas verdes. El ambiente parece ser interior, probablemente en un lugar de trabajo o una oficina. No hay otros elementos visibles que se puedan describir con detalle. El enfoque principal de la imagen es el hombre, que proyecta una actitud amigable y accesible."
+  },
+  {
+    "page": 10,
+    "image_index": 5,
+    "filename": "page_010_img_5.png",
+    "caption": "La imagen muestra a un hombre de aspecto amigable, con cabello corto y barba bien cuidada, posando frente a un fondo natural con plantas verdes. Está vestido con una camiseta oscura y tiene una expresión serena. La iluminación es suave, lo que sugiere un ambiente tranquilo. El enfoque principal es su rostro y parte superior del torso, lo que permite resaltar su expresión y la conexión con el entorno natural."
+  },
+  {
+    "page": 10,
+    "image_index": 6,
+    "filename": "page_010_img_6.png",
+    "caption": "La imagen muestra a un hombre con gafas de montura oscura y una barba ligera. Lleva una camisa de color azul y tiene un cabello oscuro. Su expresión facial es seria y mira directamente hacia la cámara. El fondo es de un tono gris claro, lo cual resalta su figura. No hay elementos adicionales o gráficos en la imagen, ya que se trata únicamente de un retrato."
+  },
+  {
+    "page": 11,
+    "image_index": 1,
+    "filename": "page_011_img_1.png",
+    "caption": "En la imagen se puede ver a un hombre sonriendo mientras sostiene la mano de un caballo. El hombre lleva una camiseta gris y una gorra. Detrás de él, hay un grupo de personas en un entorno al aire libre, con árboles y un cielo despejado. El ambiente parece ser un evento o una feria, dado la cantidad de personas y la disposición del espacio. El caballo tiene un arnés y parece estar bien cuidado. La escena transmite una sensación de alegría y conexión con los animales."
+  },
+  {
+    "page": 11,
+    "image_index": 2,
+    "filename": "page_011_img_2.png",
+    "caption": "La imagen muestra el retrato de un hombre sonriente con cabello oscuro y una camisa de color claro. El fondo es negro, lo que resalta el rostro del individuo. No hay ningún diagrama ni componentes adicionales en la imagen; simplemente se trata de una fotografía de retrato. El enfoque está en la expresión facial amigable y la presentación personal del sujeto."
+  }
+]
