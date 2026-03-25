@@ -2,7 +2,7 @@
 
 
 class Settings(BaseSettings):
-    """Configuración centralizada de la aplicación."""
+    """Configuración de la aplicación."""
 
     # OpenAI
     openai_api_key: str = ""
@@ -17,6 +17,10 @@ class Settings(BaseSettings):
     pdf_path: str = "rag-challenge.pdf"
     save_extracted_text: bool = True
     save_extracted_images: bool = True
+    save_page_vision: bool = True
+    save_page_ocr: bool = True
+    ocr_lang: str = "eng"
+    tesseract_cmd: str = ""
 
     # Chunking
     chunk_size: int = 700

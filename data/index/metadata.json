@@ -1,0 +1,715 @@
+[
+  {
+    "id": "chunk_00001",
+    "text": "La imagen representa un diagrama de flujo que describe el proceso de un sistema de gestión de inventarios. En la parte superior, se inicia con la \"Recepción de Productos\". Luego se sigue con \"Inspección de Calidad\", donde se verifica el estado de los artículos. Si los productos pasan la inspección, se trasladan a \"Almacenamiento\", de lo contrario, se dirigen a \"Devolución\". Desde \"Almacenamiento\", el flujo continúa hacia \"Procesamiento de Pedidos\", que culmina en \"Despacho\". Cada componente está conectado por flechas que indican la dirección del proceso, destacando las decisiones y pasos clave en la gestión de inventarios.",
+    "metadata": {
+      "source_type": "image_caption",
+      "page": 3,
+      "image_index": 1,
+      "filename": "page_003_img_1.png"
+    }
+  },
+  {
+    "id": "chunk_00002",
+    "text": "Este diagrama ilustra un flujo de trabajo en la nube de AWS para el procesamiento de archivos PDF. Un usuario autenticado sube documentos a un bucket de Amazon S3, lo que activa un evento en Amazon EventBridge. Este evento llama a una función Lambda, que envía tareas a una cola de Amazon SQS. A través de AWS Step Functions, se invoca un proyecto de Amazon Bedrock para la automatización de datos, seguido del procesamiento y resumen de resultados mediante otras funciones Lambda. Los resultados se almacenan en un bucket de salida en S3. Además, se utilizan Amazon DynamoDB para el seguimiento y conteo concurrente del proceso.",
+    "metadata": {
+      "source_type": "image_caption",
+      "page": 4,
+      "image_index": 1,
+      "filename": "page_004_img_1.png"
+    }
+  },
+  {
+    "id": "chunk_00003",
+    "text": "La imagen muestra un botón rectangular de color naranja con bordes azules y el texto en negrita \"Launch Stack\" en letras negras. A la derecha del texto, hay una flecha en un círculo oscuro que apunta hacia la derecha. El diseño indica que se trata de un botón interactivo, posiblemente utilizado en una interfaz de usuario para iniciar o lanzar un proceso o aplicación denominada \"Stack\". No hay otros componentes visibles en la imagen, lo que sugiere que se enfoca en esta única acción.",
+    "metadata": {
+      "source_type": "image_caption",
+      "page": 6,
+      "image_index": 1,
+      "filename": "page_006_img_1.png"
+    }
+  },
+  {
+    "id": "chunk_00004",
+    "text": "La imagen muestra un botón de interfaz gráfica de usuario con el texto \"Launch Stack\". El botón tiene un fondo de color naranja con bordes azules, y una flecha hacia la derecha en un círculo en la esquina derecha. El diseño sugiere una acción de inicio o ejecución de un proceso relacionado con un \"stack\". Este tipo de botón es común en aplicaciones de software y plataformas en línea, donde el usuario puede hacer clic para iniciar un conjunto de herramientas o funciones. No hay componentes o relaciones adicionales a mencionar, ya que se trata de un elemento aislado de una interfaz.",
+    "metadata": {
+      "source_type": "image_caption",
+      "page": 6,
+      "image_index": 2,
+      "filename": "page_006_img_2.png"
+    }
+  },
+  {
+    "id": "chunk_00005",
+    "text": "La imagen muestra la consola de un sistema de procesamiento de documentos, específicamente GenAI IDP. En el panel izquierdo, se presentan las herramientas disponibles, como la lista de documentos y la opción para subir nuevos documentos. En la sección principal, se indica la funcionalidad de carga de documentos, donde se menciona un prefijo para la carpeta opcional y se permite seleccionar archivos a subir. Se destaca que se ha cargado exitosamente un archivo llamado \"lending_package.pdf\", junto con su clave de objeto. También se muestra información sobre la implementación del sistema, como el nombre del stack, versión y fecha de construcción.",
+    "metadata": {
+      "source_type": "image_caption",
+      "page": 7,
+      "image_index": 1,
+      "filename": "page_007_img_1.png"
+    }
+  },
+  {
+    "id": "chunk_00006",
+    "text": "La imagen muestra un flujo de procesamiento de documentos en ejecución. En la parte superior, se indica que el estado es \"RUNNING\" con una duración de 1:50 minutos y la fecha de inicio. El flujo de procesamiento incluye cinco pasos: 1. **InvokeDataAutomation** (sucedido), 2. **ProcessResultsStep** (sucedido), 3. **CheckHITLRequired** (sucedido), 4. **SummarizationChoice** (sucedido), 5. **SummarizationStep** (en ejecución). Los pasos completados están marcados en verde, el paso en curso en azul claro y no hay pasos pendientes o fallidos. Se utiliza un gráfico para ilustrar el progreso de cada etapa.",
+    "metadata": {
+      "source_type": "image_caption",
+      "page": 8,
+      "image_index": 1,
+      "filename": "page_008_img_1.png"
+    }
+  },
+  {
+    "id": "chunk_00007",
+    "text": "La imagen muestra un editor de documentos visual, específicamente de una licencia de conducir de Estados Unidos. A la izquierda, se presenta una imagen de la licencia, con datos como el nombre, dirección, fecha de nacimiento y una foto del titular. A la derecha, se listan los datos extraídos del documento, incluyendo detalles como el color de ojos, ciudad, código postal, estado, dirección y clase de licencia, junto con los niveles de confianza en los datos detectados. En la parte inferior, hay opciones para hacer zoom y pan en la imagen, así como botones para cancelar o confirmar la edición.",
+    "metadata": {
+      "source_type": "image_caption",
+      "page": 8,
+      "image_index": 2,
+      "filename": "page_008_img_2.png"
+    }
+  },
+  {
+    "id": "chunk_00008",
+    "text": "La imagen muestra la interfaz de una consola de procesamiento de documentos llamada \"GenAI IDP Console\". En la parte izquierda, se encuentran herramientas como \"Document List\", \"Upload Document(s)\", y \"View/Edit Configuration\". En la sección central, se presenta el \"Documents Knowledge Base Query Tool\", que permite hacer consultas sobre un documento, con ejemplos de preguntas y respuestas relacionadas con la licencia de conducir de una persona llamada María García. Se indican también las fuentes de información utilizadas. En la parte inferior, hay un campo para escribir preguntas y un botón \"Submit\" para enviarlas.",
+    "metadata": {
+      "source_type": "image_caption",
+      "page": 9,
+      "image_index": 1,
+      "filename": "page_009_img_1.png"
+    }
+  },
+  {
+    "id": "chunk_00009",
+    "text": "La imagen muestra a un hombre sonriente con gafas, que lleva una camisa de cuadros. El fondo es negro, lo que resalta su rostro y expresión. No se puede determinar más información sobre su identidad o contexto a partir de la imagen.",
+    "metadata": {
+      "source_type": "image_caption",
+      "page": 10,
+      "image_index": 1,
+      "filename": "page_010_img_1.png"
+    }
+  },
+  {
+    "id": "chunk_00010",
+    "text": "La imagen muestra a un hombre de pie frente a un fondo natural, con vegetación en tonos verdes. Tiene el cabello corto y una barba bien cuidada. Viste una camiseta de color oscuro y sonríe levemente, dando una impresión de amabilidad y confianza. La iluminación resalta su rostro y la textura del fondo. No hay otros elementos o detalles en la imagen que desvíen la atención del sujeto principal.",
+    "metadata": {
+      "source_type": "image_caption",
+      "page": 10,
+      "image_index": 5,
+      "filename": "page_010_img_5.png"
+    }
+  },
+  {
+    "id": "chunk_00011",
+    "text": "La imagen muestra a un hombre con una camisa azul y gafas, posando frente a un fondo gris. Tiene una expresión seria y parece estar en un entorno profesional, posiblemente relacionado con un ámbito académico o laboral. Su cabello es oscuro y tiene una barba recortada. No hay otros elementos o componentes visibles que se puedan describir en la imagen.",
+    "metadata": {
+      "source_type": "image_caption",
+      "page": 10,
+      "image_index": 6,
+      "filename": "page_010_img_6.png"
+    }
+  },
+  {
+    "id": "chunk_00012",
+    "text": "### Resumen de la página La página presenta el enfoque de procesamiento de documentos inteligentes (IDP) utilizando la inteligencia artificial generativa en AWS. A pesar de la modernización, muchas organizaciones siguen dependiendo de la entrada manual de datos, lo que ralentiza sus operaciones y genera errores. La publicación introduce el GenAI IDP Accelerator, una solución de código abierto que facilita la extracción automatizada de datos estructurados de documentos. ### Texto clave visible - \"Intelligent document processing (IDP)\" - \"OCR (Optical Character Recognition)\" - \"Document classification\" - \"Data extraction\" - \"Assessment\" - \"Summarization\" - \"Evaluation\" ### Componentes/entidade",
+    "metadata": {
+      "source_type": "page_vision",
+      "page": 1,
+      "filename": "page_001.png"
+    }
+  },
+  {
+    "id": "chunk_00013",
+    "text": "tical Character Recognition)\" - \"Document classification\" - \"Data extraction\" - \"Assessment\" - \"Summarization\" - \"Evaluation\" ### Componentes/entidades importantes - **GenAI IDP Accelerator**: Solución para automatizar el procesamiento de documentos. - **IDP**: Conjunto de tecnologías que incluyen OCR, clasificación de documentos, extracción de datos, evaluación, y resumen. ### Relaciones o flujo No se presenta un diagrama en la página. Sin embargo, se menciona que el GenAI IDP Accelerator ayuda a las organizaciones a manejar el desafío de extraer información de documentos, reduciendo la intervención manual y facilitando la escalabilidad.",
+    "metadata": {
+      "source_type": "page_vision",
+      "page": 1,
+      "filename": "page_001.png"
+    }
+  },
+  {
+    "id": "chunk_00014",
+    "text": "### Resumen de la página La página describe la transformación generada por la inteligencia artificial (IA) en el procesamiento inteligente de documentos (IDP). A través de modelos de lenguaje y generativos, las organizaciones pueden automatizar la extracción de datos de documentos complejos con alta precisión, reduciendo significativamente el tiempo y esfuerzo requeridos. Se presenta el *GenAI IDP Accelerator*, una solución de código abierto que mejora la precisión y agiliza el manejo de documentos, utilizando herramientas como *Amazon Bedrock* para facilitar la automatización. ### Texto clave visible - Revolución de la IA generativa en IDP - GenAI IDP Accelerator - Automatización de procesa",
+    "metadata": {
+      "source_type": "page_vision",
+      "page": 2,
+      "filename": "page_002.png"
+    }
+  },
+  {
+    "id": "chunk_00015",
+    "text": " para facilitar la automatización. ### Texto clave visible - Revolución de la IA generativa en IDP - GenAI IDP Accelerator - Automatización de procesamiento de documentos - Amazon Bedrock Data Automation - Modelos de lenguaje (LLMs) ### Componentes/Entidades importantes - GenAI IDP Accelerator - Amazon Bedrock - Modelos de lenguaje (LLMs) - Documentos complejos - Infraestructura de procesamiento (frameworks) ### Relaciones o flujo La página señala que el *GenAI IDP Accelerator* utiliza *Amazon Bedrock Data Automation* para transformar el IDP, permitiendo un procesamiento más ágil y preciso de documentos mediante la integración de múltiples modelos de IA y servicios de AWS. Esto representa un",
+    "metadata": {
+      "source_type": "page_vision",
+      "page": 2,
+      "filename": "page_002.png"
+    }
+  },
+  {
+    "id": "chunk_00016",
+    "text": "ermitiendo un procesamiento más ágil y preciso de documentos mediante la integración de múltiples modelos de IA y servicios de AWS. Esto representa un cambio desde enfoques anteriores basados en plantillas hacia métodos más flexibles y escalables.",
+    "metadata": {
+      "source_type": "page_vision",
+      "page": 2,
+      "filename": "page_002.png"
+    }
+  },
+  {
+    "id": "chunk_00017",
+    "text": "**1. Resumen de la página:** La página describe el impacto del GenAI IDP Accelerator en el procesamiento de documentos en diferentes industrias, destacando los logros de competidoras como Competiscan y Ricoh. Se enfatiza cómo estas herramientas han transformado la eficiencia y la precisión en la gestión documental. **2. Texto clave visible:** - GenAI IDP Accelerator - Transformando el procesamiento documental - Competiscan: 85% precisión en clasificación - Ricoh: Ahorro de 1,900 horas-persona anualmente - Escalabilidad de hasta 70,000 documentos **3. Componentes/entidades importantes:** - GenAI IDP Accelerator - Competiscan (inteligencia de marketing) - Ricoh (gestión de documentos) - Docume",
+    "metadata": {
+      "source_type": "page_vision",
+      "page": 3,
+      "filename": "page_003.png"
+    }
+  },
+  {
+    "id": "chunk_00018",
+    "text": "s **3. Componentes/entidades importantes:** - GenAI IDP Accelerator - Competiscan (inteligencia de marketing) - Ricoh (gestión de documentos) - Documentos de marketing y sanitarios - Procesamiento automatizado **4. Relaciones o flujo:** No hay diagramas visibles en el texto proporcionado, pero se entiende que el flujo implica la implementación de la tecnología GenAI IDP para mejorar la precisión y eficiencia del procesamiento documental en empresas, lo que a su vez facilita el crecimiento comercial y el ahorro de tiempo.",
+    "metadata": {
+      "source_type": "page_vision",
+      "page": 3,
+      "filename": "page_003.png"
+    }
+  },
+  {
+    "id": "chunk_00019",
+    "text": "**Resumen de la página:** La página describe el GenAI IDP Accelerator, una solución modular y sin servidor para procesar documentos no estructurados en datos estructurados. Utiliza servicios de AWS para ofrecer escalabilidad y seguridad, combinando OCR, clasificación y evaluación. Está diseñado para integrarse con sistemas existentes en el sector salud. **Texto clave visible:** - Clasificación automática de quejas vs. apelaciones. - Marco reutilizable desplegable en múltiples clientes de salud. - Integración de revisión con humanos para validación de expertos. - Arquitectura modular para procesamiento de documentos a gran escala. **Componentes/entidades importantes:** - AWS S3 (almacenamient",
+    "metadata": {
+      "source_type": "page_vision",
+      "page": 4,
+      "filename": "page_004.png"
+    }
+  },
+  {
+    "id": "chunk_00020",
+    "text": "ión de expertos. - Arquitectura modular para procesamiento de documentos a gran escala. **Componentes/entidades importantes:** - AWS S3 (almacenamiento de documentos). - AWS Lambda (funciones para procesamiento). - AWS Step Functions (automatización del flujo de trabajo). - Amazon DynamoDB (base de datos de seguimiento). - Amazon EventBridge (gestión de eventos). **Relaciones o flujo si hay diagrama:** El flujo muestra cómo los documentos ingresan al sistema (input bucket en S3), son procesados a través de varias funciones Lambda, se almacenan en DynamoDB para seguimiento, y finalmente se evalúan y almacenan en un bucket de salida. El proceso también incluye un componente de interfaz web (Ge",
+    "metadata": {
+      "source_type": "page_vision",
+      "page": 4,
+      "filename": "page_004.png"
+    }
+  },
+  {
+    "id": "chunk_00021",
+    "text": "en DynamoDB para seguimiento, y finalmente se evalúan y almacenan en un bucket de salida. El proceso también incluye un componente de interfaz web (GenAI IDP UI) para interacción con el usuario.",
+    "metadata": {
+      "source_type": "page_vision",
+      "page": 4,
+      "filename": "page_004.png"
+    }
+  },
+  {
+    "id": "chunk_00022",
+    "text": "### Resumen de la Página La página detalla características de una solución de procesamiento de documentos inteligente en AWS, utilizando inteligencia artificial generativa. Se enfoca en la clasificación y extracción de información clave, destacando un enfoque arquitectónico sin servidor que permite escalabilidad automática y eficiencia en costos. ### Texto Clave Visible - Arquitectura sin servidor: AWS Lambda, AWS Step Functions. - Clasificación y separación de documentos mediante AI. - Extracción avanzada de información clave. - Patrones de procesamiento predefinidos. - Revisión humana integrada (HITL). - Interfaz web receptiva para monitorear el procesamiento. ### Componentes/Entidades Imp",
+    "metadata": {
+      "source_type": "page_vision",
+      "page": 5,
+      "filename": "page_005.png"
+    }
+  },
+  {
+    "id": "chunk_00023",
+    "text": "ocesamiento predefinidos. - Revisión humana integrada (HITL). - Interfaz web receptiva para monitorear el procesamiento. ### Componentes/Entidades Importantes - **AWS Lambda y AWS Step Functions**: Herramientas para gestión y escalado. - **Amazon Bedrock**: Utilizado para automatización de datos y modelos multimodales. - **Amazon Textract y SageMaker**: Herramientas para extracción y clasificación. - **Base de datos de análisis**: Centraliza métricas y optimización. ### Relaciones o Flujo No hay un diagrama visible, pero se menciona un flujo de trabajo que integra: 1. Procesamiento de documentos con múltiples patrones. 2. Revisión humana de las salidas del modelo AI. 3. Monitoreo y ajuste a ",
+    "metadata": {
+      "source_type": "page_vision",
+      "page": 5,
+      "filename": "page_005.png"
+    }
+  },
+  {
+    "id": "chunk_00024",
+    "text": " trabajo que integra: 1. Procesamiento de documentos con múltiples patrones. 2. Revisión humana de las salidas del modelo AI. 3. Monitoreo y ajuste a través de una interfaz web. Esta solución está diseñada para adaptarse a diversas necesidades de procesamiento documental.",
+    "metadata": {
+      "source_type": "page_vision",
+      "page": 5,
+      "filename": "page_005.png"
+    }
+  },
+  {
+    "id": "chunk_00025",
+    "text": "**Resumen de la página:** La página describe cómo implementar el Acelerador GenAI IDP (Intelligent Document Processing) en AWS utilizando un paquete Python y una plantilla de AWS CloudFormation. Detalla los requisitos previos, el proceso de despliegue y cómo comenzar a procesar documentos con el sistema. **Texto clave visible:** - \"Developer-friendly python package\" - \"Prerequisites\" - \"Deploy the GenAI IDP Accelerator\" - \"Process documents\" **Componentes/entidades importantes:** 1. **Acelerador GenAI IDP**: Herramienta para procesar documentos utilizando IA generativa. 2. **AWS CloudFormation**: Plantilla utilizada para desplegar la solución. 3. **Modelos de Amazon Bedrock**: Requeridos par",
+    "metadata": {
+      "source_type": "page_vision",
+      "page": 6,
+      "filename": "page_006.png"
+    }
+  },
+  {
+    "id": "chunk_00026",
+    "text": " utilizando IA generativa. 2. **AWS CloudFormation**: Plantilla utilizada para desplegar la solución. 3. **Modelos de Amazon Bedrock**: Requeridos para el procesamiento. 4. **Amazon S3**: Servicio de almacenamiento para cargar documentos. **Relaciones o flujo:** 1. Se necesita una cuenta de AWS. 2. Despliegue de la plantilla de CloudFormation en la región deseada. 3. Configuración del patrón de procesamiento (patrón por defecto: Automatización de Datos). 4. Carga y procesamiento de documentos a través de la interfaz web o automáticamente mediante S3. Este flujo establece cómo los usuarios pueden operacionalizar el procesamiento de documentos con IA en la plataforma de AWS.",
+    "metadata": {
+      "source_type": "page_vision",
+      "page": 6,
+      "filename": "page_006.png"
+    }
+  },
+  {
+    "id": "chunk_00027",
+    "text": "### Resumen de la Página La página presenta una interfaz de usuario para el procesamiento de documentos utilizando inteligencia artificial generativa en AWS. Muestra cómo cargar documentos y monitorear su flujo a través de un sistema automatizado. ### Texto Clave Visible - **Título**: \"GenAI IDP Console (preview)\" - **Subtítulo**: \"Upload Documents\" - **Instrucción**: \"Select your document from the document list and choose View Processing Flow...\" ### Componentes/Entidades Importantes 1. **Document List**: Lista de documentos cargados. 2. **Upload Documents**: Sección para cargar archivos. 3. **Resources**: Proporciona acceso a README y código fuente. 4. **Deployment Info**: Información sobr",
+    "metadata": {
+      "source_type": "page_vision",
+      "page": 7,
+      "filename": "page_007.png"
+    }
+  },
+  {
+    "id": "chunk_00028",
+    "text": "oad Documents**: Sección para cargar archivos. 3. **Resources**: Proporciona acceso a README y código fuente. 4. **Deployment Info**: Información sobre la versión y nombre del stack. ### Relaciones o Flujo 1. **Cargar Documento**: El usuario selecciona un archivo (ej. \"lending_package.pdf\") para cargar. 2. **Visualizar Flujo de Procesamiento**: Después de cargar, el usuario puede seleccionar el documento y ver cómo se procesa en la pipeline. El diseño permite interacciones simples, facilitando el monitoreo del progreso del procesamiento de documentos.",
+    "metadata": {
+      "source_type": "page_vision",
+      "page": 7,
+      "filename": "page_007.png"
+    }
+  },
+  {
+    "id": "chunk_00029",
+    "text": "### 1. Resumen de la página La página muestra un flujo de procesamiento de documentos utilizando inteligencia artificial en AWS. Se presenta un estado de ejecución que indica que el proceso está en progreso, con varias etapas del flujo completadas con éxito. ### 2. Texto clave visible - **Título del documento:** \"UNITED STATES DRIVER LICENSE\" - **Fecha de expiración:** \"01/23/2014\" - **Nombre:** \"JOHN DOE\" - **Número de licencia:** \"638373763748911011\" ### 3. Componentes/entidades importantes - **Datos del documento:** Incluye información esencial como el nombre, el número de licencia, la dirección y el color de ojos. - **Confidencias:** Se presentan porcentajes de confianza para diferentes ",
+    "metadata": {
+      "source_type": "page_vision",
+      "page": 8,
+      "filename": "page_008.png"
+    }
+  },
+  {
+    "id": "chunk_00030",
+    "text": "ial como el nombre, el número de licencia, la dirección y el color de ojos. - **Confidencias:** Se presentan porcentajes de confianza para diferentes campos de datos, como: - Ciudad: 94.9% - Estado: 87.9% - Clase: 90.2% ### 4. Relaciones o flujo El flujo de procesamiento de documentos incluye etapas como: - **InvokeDataAutomation** - **ProcessResultsStep** - **CheckTTLRequired** - **SummarizationChoice** - **SummarizationStep** Cada una muestra el estatus de rendimiento (completado, en ejecución). El diagrama indica un proceso secuencial para la extracción y verificación de datos.",
+    "metadata": {
+      "source_type": "page_vision",
+      "page": 8,
+      "filename": "page_008.png"
+    }
+  },
+  {
+    "id": "chunk_00031",
+    "text": "**1. Resumen de la página:** La página presenta el GenAI IDP Accelerator, un enfoque innovador para el procesamiento de documentos que combina la inteligencia generativa con la escalabilidad de AWS. Se detallan funcionalidades como el uso de un sistema de consulta para hacer preguntas sobre contenido procesado, métodos alternativos de implementación y cómo actualizar o limpiar recursos. **2. Texto clave visible:** - \"Documents Knowledge Base Query Tool\" - \"Alternative deployment methods\" - \"You can build the solution from source code\" - \"Update an existing GenAI IDP Accelerator stack\" - \"Conclusion\" - \"reliability and scale of AWS\" **3. Componentes/entidades importantes:** - GenAI IDP Accele",
+    "metadata": {
+      "source_type": "page_vision",
+      "page": 9,
+      "filename": "page_009.png"
+    }
+  },
+  {
+    "id": "chunk_00032",
+    "text": " an existing GenAI IDP Accelerator stack\" - \"Conclusion\" - \"reliability and scale of AWS\" **3. Componentes/entidades importantes:** - GenAI IDP Accelerator - Herramienta de consulta de base de conocimiento - AWS Cloud Development Kit (CDK) - Recursos de AWS Professional Services - GitHub repository **4. Relaciones o flujo:** No hay un diagrama visible, pero el flujo de información indica que los usuarios pueden implementar el GenAI IDP, realizar consultas sobre documentos, actualizar su configuración, y limpiar recursos al finalizar pruebas. Se enfatiza la capacidad de usar soluciones personalizadas mediante código fuente y el soporte de servicios de AWS para implementación.",
+    "metadata": {
+      "source_type": "page_vision",
+      "page": 9,
+      "filename": "page_009.png"
+    }
+  },
+  {
+    "id": "chunk_00033",
+    "text": "1. **Resumen de la página**: La página presenta un documento sobre el procesamiento inteligente de documentos utilizando inteligencia artificial generativa en AWS. Incluye información sobre un repositorio de GitHub con guías y ejemplos, así como servicios profesionales de AWS para implementación. 2. **Texto clave visible**: - \"Visita el GitHub repository para guías detalladas.\" - \"AWS Professional Services y AWS Partners están disponibles para ayudar con la implementación.\" - \"Únete a la comunidad de GitHub para contribuir y compartir experiencias.\" 3. **Componentes/entidades importantes**: - Autores: Bob Strahan, Joe King, Mofijul Islam, Vincil Bishop, David Kaleko, Rafal Pawlaszek. - Roles",
+    "metadata": {
+      "source_type": "page_vision",
+      "page": 10,
+      "filename": "page_010.png"
+    }
+  },
+  {
+    "id": "chunk_00034",
+    "text": "ias.\" 3. **Componentes/entidades importantes**: - Autores: Bob Strahan, Joe King, Mofijul Islam, Vincil Bishop, David Kaleko, Rafal Pawlaszek. - Roles: Principal Solutions Architect, Senior Data Scientist, Applied Scientist, Senior Deep Learning Architect, Senior Applied Scientist, Senior Cloud Application Architect. - AWS Generative AI Innovation Center. 4. **Relaciones o flujo**: La página no presenta diagramas. Sin embargo, menciona que los autores pertenecen a diferentes roles dentro del AWS Generative AI Innovation Center y que todos están involucrados en la difusión y aplicación de herramientas de inteligencia artificial generativa. La relación entre los autores y sus funciones enfatiz",
+    "metadata": {
+      "source_type": "page_vision",
+      "page": 10,
+      "filename": "page_010.png"
+    }
+  },
+  {
+    "id": "chunk_00035",
+    "text": " involucrados en la difusión y aplicación de herramientas de inteligencia artificial generativa. La relación entre los autores y sus funciones enfatiza la colaboración en la implementación de soluciones en la nube.",
+    "metadata": {
+      "source_type": "page_vision",
+      "page": 10,
+      "filename": "page_010.png"
+    }
+  },
+  {
+    "id": "chunk_00036",
+    "text": "1. **Resumen de la página**: La página es una sección de un documento relacionado con el procesamiento inteligente de documentos usando inteligencia artificial en AWS. Presenta a dos profesionales clave en el campo: Spencer Romo, un científico de datos, y Vamsi Thilak Gudi, un arquitecto de soluciones. También incluye agradecimientos a un grupo diverso de personas que contribuyeron al proyecto. 2. **Texto clave visible**: - Spencer Romo es un Senior Data Scientist en el AWS Generative AI Innovation Center. - Vamsi Thilak Gudi es un Solutions Architect en el AWS World Wide Public Sector team. - Agradecimientos a varias personas por su visión y contribuciones. 3. **Componentes/entidades import",
+    "metadata": {
+      "source_type": "page_vision",
+      "page": 11,
+      "filename": "page_011.png"
+    }
+  },
+  {
+    "id": "chunk_00037",
+    "text": "chitect en el AWS World Wide Public Sector team. - Agradecimientos a varias personas por su visión y contribuciones. 3. **Componentes/entidades importantes**: - Spencer Romo: Senior Data Scientist. - Vamsi Thilak Gudi: Solutions Architect. - AWS (Amazon Web Services): Plataforma involucrada. - Grupo de colaboradores mencionados en los agradecimientos. 4. **Relaciones o flujo**: No se presenta un diagrama en la página. El texto indica que las personas mencionadas desempeñan roles importantes en el desarrollo y la implementación de soluciones de inteligencia artificial, mostrando la colaboración entre diferentes profesionales en el ámbito de AWS.",
+    "metadata": {
+      "source_type": "page_vision",
+      "page": 11,
+      "filename": "page_011.png"
+    }
+  },
+  {
+    "id": "chunk_00038",
+    "text": "8/25/25, 5:45 PM Accelerate intelligent document processing with generative Al on AWS | Artificial Intelligence Artificial Intelligence Accelerate intelligent document processing with generative Al on by Bob Strahan, Vamsi Thilak Gudi, David Kaleko, Joe King, Mofijul Islam, Rafal Pawlaszek, Spencer Romo, and Vincil Bishop | on 22 AUG 2025 | in Amazon Bedrock Data Automation, Generative Al| Permalink | @ Comments | @ Share Every day, organizations process millions of documents, including invoices, contracts, insurance claims, medical records, and financial statements. Despite the critical role these documents play, an estimated 80-90% of the data they contain is unstructured and largely untap",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 1,
+      "filename": "page_001.png"
+    }
+  },
+  {
+    "id": "chunk_00039",
+    "text": "d financial statements. Despite the critical role these documents play, an estimated 80-90% of the data they contain is unstructured and largely untapped, hiding valuable insights that could transform business outcomes. Despite advances in technology, many organizations still rely on manual data entry, spending countless hours extracting information from PDFs, scanned images, and forms. This manual approach is time-consuming, error- prone, and prevents organizations from scaling their operations and responding quickly to business demands. Although generative Al has made it easier to build proof-of-concept document processing solutions, the journey from proof of concept to production remains ",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 1,
+      "filename": "page_001.png"
+    }
+  },
+  {
+    "id": "chunk_00040",
+    "text": "ugh generative Al has made it easier to build proof-of-concept document processing solutions, the journey from proof of concept to production remains fraught with challenges. Organizations often find themselves rebuilding from scratch when they discover their prototype can’t handle production volumes, lacks proper error handling, doesn’t scale cost-effectively, or fails to meet enterprise security and compliance requirements. What works in a demo with a handful of documents often breaks down when processing thousands of documents daily in a production environment. In this post, we introduce our open source GenAl IDP Accelerator—a tested solution that we use to help customers across industrie",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 1,
+      "filename": "page_001.png"
+    }
+  },
+  {
+    "id": "chunk_00041",
+    "text": "duction environment. In this post, we introduce our open source GenAl IDP Accelerator—a tested solution that we use to help customers across industries address their document processing challenges. Automated document processing workflows accurately extract structured information from documents, reducing manual effort. We will show you how this ready-to-deploy solution can help you build those workflows with generative Al on AWS in days instead of months. Understanding intelligent document processing Intelligent document processing (IDP) encompasses the technologies and techniques used to extract and process data from various document types. Common IDP tasks include: ¢ OCR (Optical Character ",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 1,
+      "filename": "page_001.png"
+    }
+  },
+  {
+    "id": "chunk_00042",
+    "text": "sses the technologies and techniques used to extract and process data from various document types. Common IDP tasks include: ¢ OCR (Optical Character Recognition) — Converting scanned documents and images into machine-readable text ¢ Document classification — Automatically identifying document types (such as invoices, contracts, or forms) e Data extraction — Pulling structured information from unstructured documents e Assessment - Evaluating the quality and confidence of extracted data e¢ Summarization - Creating concise summaries of document content e Evaluation — Measuring accuracy and performance against expected outcomes These capabilities are critical across industries. In financial ser",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 1,
+      "filename": "page_001.png"
+    }
+  },
+  {
+    "id": "chunk_00043",
+    "text": "ontent e Evaluation — Measuring accuracy and performance against expected outcomes These capabilities are critical across industries. In financial services, organizations use IDP to process loan applications, extract data from bank statements, and validate insurance claims. Healthcare providers rely on IDP to extract patient information from medical records, process insurance forms, and handle lab results efficiently. Manufacturing and logistics companies use IDP to process invoices and purchase orders, extract shipping https://aws.amazon.com/blogs/machine-learning/accelerate-intelligent-document-processing-with-generative-ai-on-aws/ a)",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 1,
+      "filename": "page_001.png"
+    }
+  },
+  {
+    "id": "chunk_00044",
+    "text": "8/25/25, 5:45 PM Accelerate intelligent document processing with generative Al on AWS | Artificial Intelligence information, and handle quality certificates. Government agencies use IDP to process citizen applications, extract data from tax forms, manage permits and licenses, and enforce regulatory compliance. The generative Al revolution in IDP Traditional IDP solutions relied on template-based extraction, regular expressions, and classical machine learning (ML) models. Though functional, these approaches required extensive setup, struggled with document variations, and achieved limited accuracy on complex documents. The emergence of large language models (LLMs) and generative Al has fundam",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 2,
+      "filename": "page_002.png"
+    }
+  },
+  {
+    "id": "chunk_00045",
+    "text": "th document variations, and achieved limited accuracy on complex documents. The emergence of large language models (LLMs) and generative Al has fundamentally transformed IDP capabilities. Modern Al models can understand document context, handle variations without templates, achieve near-human accuracy on complex extractions, and adapt to new document types with minimal examples. This shift from rule- based to intelligence-based processing means organizations can now process different document types with high accuracy, dramatically reducing the time and cost of implementation. GenAl IDP Accelerator We're excited to share the GenAl IDP Accelerator—an open source solution that transforms how or",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 2,
+      "filename": "page_002.png"
+    }
+  },
+  {
+    "id": "chunk_00046",
+    "text": "time and cost of implementation. GenAl IDP Accelerator We're excited to share the GenAl IDP Accelerator—an open source solution that transforms how organizations handle document processing by dramatically reducing manual effort and improving accuracy. This serverless foundation offers processing patterns which use Amazon Bedrock Data Automation for rich out-of-the-box document processing features, high accuracy, ease of use, and straightforward per-page pricing, Amazon Bedrock state-of-the-art foundation models (FMs) for complex documents requiring custom logic, and other AWS Al services to provide a flexible, scalable starting point for enterprises to build document automation tailored to t",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 2,
+      "filename": "page_002.png"
+    }
+  },
+  {
+    "id": "chunk_00047",
+    "text": "ring custom logic, and other AWS Al services to provide a flexible, scalable starting point for enterprises to build document automation tailored to their specific needs. The following is a short demo of the solution in action, in this case showcasing the default Amazon Bedrock Data Automation processing pattern. https://aws.amazon.com/blogs/machine-learning/accelerate-intelligent-document-processing-with-generative-ai-on-aws/ 2nt",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 2,
+      "filename": "page_002.png"
+    }
+  },
+  {
+    "id": "chunk_00048",
+    "text": "8/25/25, 5:45 PM Accelerate intelligent document processing with generative Al on AWS | Artificial Intelligence Real-world impact The GenAl IDP Accelerator is already transforming document processing for organizations across industries. Competiscan: Transforming marketing intelligence at scale Competiscan, a leader in competitive marketing intelligence, faced a massive challenge: processing 35,000-45,000 marketing campaigns daily while maintaining a searchable archive of 45 million campaigns spanning 15 years. Using the GenAl IDP Accelerator, Competiscan achieved the following: © 85% classification and extraction accuracy across diverse marketing materials e Increased scalability to handle 3",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 3,
+      "filename": "page_003.png"
+    }
+  },
+  {
+    "id": "chunk_00049",
+    "text": "ompetiscan achieved the following: © 85% classification and extraction accuracy across diverse marketing materials e Increased scalability to handle 35,000-45,000 daily campaigns e Removal of critical bottlenecks, facilitating business growth e Production deployment in just 8 weeks from initial concept Ricoh: Scaling document processing Ricoh, a global leader in document management, implemented the GenAl IDP Accelerator to transform healthcare document processing for their clients. Processing over 10,000 healthcare documents monthly with potential to scale to 70,000, they needed a solution that could handle complex medical documentation with high accuracy. The results speak for themselves: ¢",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 3,
+      "filename": "page_003.png"
+    }
+  },
+  {
+    "id": "chunk_00050",
+    "text": "ial to scale to 70,000, they needed a solution that could handle complex medical documentation with high accuracy. The results speak for themselves: ¢ Savings potential of over 1,900 person-hours annually through automation e Achieved extraction accuracy to help minimize financial penalties from processing errors https://aws.amazon.com/blogs/machine-learning/accelerate-intelligent-document-processing-with-generative-ai-on-aws/ 3",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 3,
+      "filename": "page_003.png"
+    }
+  },
+  {
+    "id": "chunk_00051",
+    "text": "8/25/25, 5:45 PM Accelerate intelligent document processing with generative Al on AWS | Artificial Intelligence ¢ Automated classification of grievances vs. appeals © Created a reusable framework deployable across multiple healthcare customers e Integrated with human-in-the-loop review for cases requiring expert validation e Leveraged modular architecture to integrate with existing systems, enabling custom document splitting and large-scale document processing Solution overview The GenAl IDP Accelerator is a modular, serverless solution that automatically converts unstructured documents into structured, actionable data. Built entirely on AWS services, it provides enterprise-grade scalability",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 4,
+      "filename": "page_004.png"
+    }
+  },
+  {
+    "id": "chunk_00052",
+    "text": "tomatically converts unstructured documents into structured, actionable data. Built entirely on AWS services, it provides enterprise-grade scalability, security, and cost- effectiveness while requiring minimal setup and maintenance. Its configuration-driven design helps teams quicl fFecti hile reqi ig l setup and i It figuration-d) design helps t quickly adapt prompts, extraction templates, and validation rules for their specific document types without touching the underlying infrastructure. The solution follows a modular pipeline that enriches documents at each stage, from OCR to classification, to extraction, to assessment, to summarization, and ending with evaluation. You can deploy and c",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 4,
+      "filename": "page_004.png"
+    }
+  },
+  {
+    "id": "chunk_00053",
+    "text": " documents at each stage, from OCR to classification, to extraction, to assessment, to summarization, and ending with evaluation. You can deploy and customize each step independently, so you can optimize for your specific use cases while maintaining the benefits of the integrated workflow. The following diagram illustrates the solution architecture, showing the default Bedrock Data Automation workflow (Pattern-1). Rue] AWS Cloud Authenticated | f [ o.. H GenAl IDP Web Ul 4 Hl user { 1 = 1 H t C+) Ce ] Amazon DynamoDB | ' H H & = Tracking table { H | { (8) ” Amazon Cognito Amazon CloudFront | H | Amazon S3 1 ' C7] H | Input bucket (PDFs) AWS AppSyne | ! ! | ll API 1 i i i \\ 1 H i 1 ‘Amazon $3",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 4,
+      "filename": "page_004.png"
+    }
+  },
+  {
+    "id": "chunk_00054",
+    "text": "{ H | { (8) ” Amazon Cognito Amazon CloudFront | H | Amazon S3 1 ' C7] H | Input bucket (PDFs) AWS AppSyne | ! ! | ll API 1 i i i \\ 1 H i 1 ‘Amazon $3 1 H Client { Amazon EventBridge 25. i i H apple: | AWS Lambda =§5] AWS Step Functions: Amazon Bedrock Data Automation workflow H i | in i ‘OM HY Ea —i fe) i AWS Lambda ‘Amazon Bedrock AWS Lambda AWS Lambda Amazon S3_ | {i Aus Cambs ‘Amazon DynamoDB. | !nvoke Amazon Bedrock Data Automation Process Results Summarization | Output bucket } i ‘Queue v7 Goncunent counter Data Automation Project (JSON files) i {| AmazonSQS _ AWS Lambda Amazon $3 AWS Lambda H { Queue Queue Processor Evaluation baseline bucket Evaluation i Refer to the GitHub repo for ",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 4,
+      "filename": "page_004.png"
+    }
+  },
+  {
+    "id": "chunk_00055",
+    "text": "iles) i {| AmazonSQS _ AWS Lambda Amazon $3 AWS Lambda H { Queue Queue Processor Evaluation baseline bucket Evaluation i Refer to the GitHub repo for additional details and processing patterns. https://aws.amazon.com/blogs/machine-learning/accelerate-intelligent-document-processing-with-generative-ai-on-aws/ ant",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 4,
+      "filename": "page_004.png"
+    }
+  },
+  {
+    "id": "chunk_00056",
+    "text": "8/25/25, 5:45 PM Accelerate intelligent document processing with generative Al on AWS | Artificial Intelligence Some of the key features of the solution include: ¢ Serverless architecture — Built on AWS Lambda, AWS Step Functions, and other serverless technologies for queueing, concurrency management, and retries to provide automatic scaling and pay-per-use pricing for production workloads of many sizes e Generative Al-powered document packet splitting and classification — Intelligent document classification using Amazon Bedrock Data Automation or Amazon Bedrock multimodal FMs, including support for multi-document packets and packet splitting e Advanced Al key information extraction — Key in",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 5,
+      "filename": "page_005.png"
+    }
+  },
+  {
+    "id": "chunk_00057",
+    "text": " or Amazon Bedrock multimodal FMs, including support for multi-document packets and packet splitting e Advanced Al key information extraction — Key information extraction using Amazon Bedrock Data Automation or Amazon Bedrock multimodal FMs e Multiple processing patterns — Choose from pre-built patterns optimized for different workloads with different configurability, cost, and accuracy requirements, or extend the solution with additional patterns: © Pattern 1 - Uses Amazon Bedrock Data Automation, a fully managed service that offers rich out-of-the-box features, ease of use, and straightforward per-page pricing. This pattern is recommended for most use cases. © Pattern 2 - Uses Amazon Textr",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 5,
+      "filename": "page_005.png"
+    }
+  },
+  {
+    "id": "chunk_00058",
+    "text": "f-the-box features, ease of use, and straightforward per-page pricing. This pattern is recommended for most use cases. © Pattern 2 - Uses Amazon Textract and Amazon Bedrock with Amazon Nova, Anthropic’'s Claude, or custom fine-tuned Amazon Nova models. This pattern is ideal for complex documents requiring custom logic. o Pattern 3 —- Uses Amazon Textract, Amazon SageMaker with a fine-tuned model for classification, and Amazon Bedrock for extraction. This pattern is ideal for documents requiring specialized classification. We expect to add more pattern options to handle additional real-world document processing needs, and to take advantage of ever-improving state-of-the-art capabilities: e Fe",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 5,
+      "filename": "page_005.png"
+    }
+  },
+  {
+    "id": "chunk_00059",
+    "text": "pattern options to handle additional real-world document processing needs, and to take advantage of ever-improving state-of-the-art capabilities: e Few-shot learning — Improve accuracy for classification and extraction by providing few-shot examples to guide the Al models ¢ Confidence assessment — Al-powered quality assurance that evaluates extraction field confidence, used to indicate documents for human review e¢ Human-in-the-loop (HITL) review — Integrated workflow for human review of low-confidence extractions using Amazon SageMaker Augmented Al (Amazon A21), currently available for Pattern 1, with support for Patterns 2 and 3 coming soon ¢ Web user interface — Responsive web UI for moni",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 5,
+      "filename": "page_005.png"
+    }
+  },
+  {
+    "id": "chunk_00060",
+    "text": "ed Al (Amazon A21), currently available for Pattern 1, with support for Patterns 2 and 3 coming soon ¢ Web user interface — Responsive web UI for monitoring document processing, viewing results, and managing configurations e¢ Knowledge base integration — Query processed documents using natural language through Amazon Bedrock Knowledge Bases ¢ Built-in evaluation —- Framework to evaluate and improve accuracy against baseline data e Analytics and reporting database — Centralized analytics database for tracking processing metrics, accuracy trends, and cost optimization across document workflows, and for analyzing extracted document content using Amazon Athena ¢ No-code configuration - Customize",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 5,
+      "filename": "page_005.png"
+    }
+  },
+  {
+    "id": "chunk_00061",
+    "text": " and cost optimization across document workflows, and for analyzing extracted document content using Amazon Athena ¢ No-code configuration - Customize document types, extraction fields, and processing logic through configuration, editable in the web UI https://aws.amazon.com/blogs/machine-learning/accelerate-intelligent-document-processing-with-generative-ai-on-aws/ itt",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 5,
+      "filename": "page_005.png"
+    }
+  },
+  {
+    "id": "chunk_00062",
+    "text": "8/25/25, 5:45 PM Accelerate intelligent document processing with generative Al on AWS | Artificial Intelligence ° Developer-friendly python package — For data science and engineering teams who want to experiment, optimize, or integrate the IDP capabilities directly into their workflows, the solution's core logic is available through the idp_common Python package Prerequisites Before you deploy the solution, make sure you have an AWS account with administrator permissions and access to Amazon and Anthropic models on Amazon Bedrock. For more details, see Access Amazon Bedrock foundation models. Deploy the GenAl IDP Accelerator To deploy the GenAl IDP Accelerator, you can use the provided AWS C",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 6,
+      "filename": "page_006.png"
+    }
+  },
+  {
+    "id": "chunk_00063",
+    "text": "ils, see Access Amazon Bedrock foundation models. Deploy the GenAl IDP Accelerator To deploy the GenAl IDP Accelerator, you can use the provided AWS CloudFormation template. For more details, see the quick start option on the GitHub repo. The high-level steps are as follows: 1. Log in to your AWS account. 2. Choose Launch Stack for your preferred AWS Region: taunch Stack US East (N. Virginia) US West (Oregon) 1. Enter your email address and choose your processing pattern (default is Pattern 1, using Amazon Bedrock Data Automation). 2. Use defaults for all other configuration parameters. 3. Deploy the stack. The stack takes approximately 15-20 minutes to deploy the resources. After deployment",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 6,
+      "filename": "page_006.png"
+    }
+  },
+  {
+    "id": "chunk_00064",
+    "text": "lts for all other configuration parameters. 3. Deploy the stack. The stack takes approximately 15-20 minutes to deploy the resources. After deployment, you will receive an email with login credentials for the web interface. Process documents After you deploy the solution, you can start processing documents: 1. Use the web interface to upload a sample document (you can use the provided sample: lending_package.pdf). In production, you typically automate loading your documents directly to the Amazon Simple Storage Service (Amazon $3) input bucket, automatically triggering processing. To learn more, see Testing without the UI. https://aws.amazon.com/blogs/machine-learning/accelerate-intelligent-",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 6,
+      "filename": "page_006.png"
+    }
+  },
+  {
+    "id": "chunk_00065",
+    "text": " automatically triggering processing. To learn more, see Testing without the UI. https://aws.amazon.com/blogs/machine-learning/accelerate-intelligent-document-processing-with-generative-ai-on-aws/ eit",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 6,
+      "filename": "page_006.png"
+    }
+  },
+  {
+    "id": "chunk_00066",
+    "text": "8/25/25, 5:45 PM Accelerate intelligent document processing with generative Al on AWS | Artificial Intelligence GenAI IDP Console (preview) Tools x @® Welcome to GenAl IDP (GenAIIDP) Document Processing > Documents > Upload Documents Document List Document KB Upload Documents Upload Document(s) View/Edit Configuration Optional folder prefix (e.g., invoices/2024) v Resources 20250714-1500-JaneDoe README [4 Select files to upload Source Code [4 ' P Choose Files | lending_package.pdf v Deployment Info Upload (1 files) Stack Name: IDP-BDA-3 Version: 0.3.7 Build: 2025-07-14 20:33:32 Upload Results: Pattern: Pattern @ lending_package.pdf: Uploaded successfully Object Key: 20250714-1500-janeDoe/len",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 7,
+      "filename": "page_007.png"
+    }
+  },
+  {
+    "id": "chunk_00067",
+    "text": ": 0.3.7 Build: 2025-07-14 20:33:32 Upload Results: Pattern: Pattern @ lending_package.pdf: Uploaded successfully Object Key: 20250714-1500-janeDoe/lending_package.paf 1. Select your document from the document list and choose View Processing Flow to watch as your document flows through the pipeline. https://aws.amazon.com/blogs/machine-learning/accelerate-intelligent-document-processing-with-generative-ai-on-aws/ 71",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 7,
+      "filename": "page_007.png"
+    }
+  },
+  {
+    "id": "chunk_00068",
+    "text": "8/25/25, 5:45 PM Accelerate intelligent document processing with generative Al on AWS | Artificial Intelligence Document Processing Flow [I /toneresh o# Lostupdates: 44426 4 x Execution Overview status Duration Stared RUNNING) 150 7/14/2025, 44224 PM Processing Flow v Lut fo) Lut Lat InvokeDataAutomation > | ProcessResuitsstep > | checkHiTirequied > | summarizationchoice —* | summarizationstep succeeDe succesneo succesneo suceetoeo © completed @ Running @ Failed @ Pending ‘Steps Timeline InvokeDataAutomation 54 SUCCEEDED 0:55 <2 ProcessResultsStep 2. Examine the extracted data with confidence scores. Visual Document Editor x Document Pages (1) Document Data | | re | pee: EVE.COLOR: i a Confi",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 8,
+      "filename": "page_008.png"
+    }
+  },
+  {
+    "id": "chunk_00069",
+    "text": "tep 2. Examine the extracted data with confidence scores. Visual Document Editor x Document Pages (1) Document Data | | re | pee: EVE.COLOR: i a Confidence: 938% /Threshoe: 70.0% SS uNITEDS Ly | DRIVER LICENSE : STS | EXPIRES 09/21/2034 op. 6383736743891101 ‘ADDRESS_DETAILS CLASS am as ENDNONE. Confidence: 988% / Threshold: 7008 iN Vey) | Sch Sig , earn i ZiP_cove: X 08 seine ee PAS Confidence 94% / Threshoc: 700% 2 ousgroa ee recar Usnssatmmerrnenet i STATE: i NRIND SSS Confidence: 87.9% / Threshold: 70.0% «> a Page1 of 1 STREET_ADDRESS: oom tian) Confidence 918H4/Threshoe: 70.0% ——e—=—~E_E cass: Confidence: 90.2% /Treshale: 70.05 fe https://aws.amazon.com/blogs/machine-learning/accelerate-",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 8,
+      "filename": "page_008.png"
+    }
+  },
+  {
+    "id": "chunk_00070",
+    "text": "ian) Confidence 918H4/Threshoe: 70.0% ——e—=—~E_E cass: Confidence: 90.2% /Treshale: 70.05 fe https://aws.amazon.com/blogs/machine-learning/accelerate-intelligent-document-processing-with-generative-ai-on-aws/ ett",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 8,
+      "filename": "page_008.png"
+    }
+  },
+  {
+    "id": "chunk_00071",
+    "text": "8/25/25, 5:45 PM Accelerate intelligent document processing with generative Al on AWS | Artificial Intelligence 3. Use the knowledge base feature to ask questions about processed content. GenAl IDP Console (preview) ( strahanr@amazon.com ¥ Tools FM © Welcome to GenalIDP (GenAIDP) x Q Document Processing > Documents > query Document KB Documents Knowledge Base Query Tool Upload Documents) View/Eat Contiguration canes The expiration date of Maria Garcia’ drivers cense ts January 20, 2028, source Code [2 > context ¥ Deployment info Sources: latest2/Iending_package.pd, lates /lending_package.pd, testsummary/lending_package.pd,testsummarylending_ package pd soci Nome:top 80a fixpages Vending. pac",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 9,
+      "filename": "page_009.png"
+    }
+  },
+  {
+    "id": "chunk_00072",
+    "text": "2/Iending_package.pd, lates /lending_package.pd, testsummary/lending_package.pd,testsummarylending_ package pd soci Nome:top 80a fixpages Vending. package.pat version03.7 What state was iissued in? Build: 2025-07-14 203832 aterm: Pattern! Maria Garcia’ drivers cense was lzued in Massachusetts > context Alternative deployment methods You can build the solution from source code if you need to deploy the solution to additional Regions or build and deploy code changes. We hope to add support for AWS Cloud Development Kit (AWS CDK) and Terraform deployments. Follow the GitHub repository for updates, or contact AWS Professional Services for implementation assistance. Update an existing GenAl IDP A",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 9,
+      "filename": "page_009.png"
+    }
+  },
+  {
+    "id": "chunk_00073",
+    "text": "loyments. Follow the GitHub repository for updates, or contact AWS Professional Services for implementation assistance. Update an existing GenAl IDP Accelerator stack You can update your existing GenAl IDP Accelerator stack to the latest release. For more details, see Updating an Existing Stack. Clean up When you're finished experimenting, clean up your resources by using the AWS CloudFormation console to delete the IDP stack that you deployed. Conclusion In this post, we discussed the GenAl IDP Accelerator, a new approach to document processing that combines the power of generative Al with the reliability and scale of AWS. You can process hundreds or even millions of documents to achieve be",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 9,
+      "filename": "page_009.png"
+    }
+  },
+  {
+    "id": "chunk_00074",
+    "text": "g that combines the power of generative Al with the reliability and scale of AWS. You can process hundreds or even millions of documents to achieve better results faster and more cost-effectively than traditional approaches. https://aws.amazon.com/blogs/machine-learning/accelerate-intelligent-document-processing-with-generative-ai-on-aws/ ont",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 9,
+      "filename": "page_009.png"
+    }
+  },
+  {
+    "id": "chunk_00075",
+    "text": "8/25/25, 5:45 PM Accelerate intelligent document processing with generative Al on AWS | Artificial Intelligence Visit the GitHub repository for detailed guides and examples and choose watch to stay informed on new releases and features. AWS Professional Services and AWS Partners are available to help with implementation. You can also join the GitHub community to contribute improvements and share your experiences. About the Authors Bob Strahan is a Principal Solutions Architect in the AWS Generative Al Innovation Center. a4 Ss Joe King is a Senior Data Scientist in the AWS Generative Al Innovation Center. Mofijul Islam is an Applied Scientist in the AWS Generative Al Innovation Center. ~~ “ V",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 10,
+      "filename": "page_010.png"
+    }
+  },
+  {
+    "id": "chunk_00076",
+    "text": "or Data Scientist in the AWS Generative Al Innovation Center. Mofijul Islam is an Applied Scientist in the AWS Generative Al Innovation Center. ~~ “ Vincil Bishop is a Senior Deep Learning Architect in the AWS Generative Al Innovation Center. i & Ri | s. David Kaleko is a Senior Applied Scientist in the AWS Generative Al Innovation Center. wi . Rafal Pawlaszek is a Senior Cloud Application Architect in the AWS Generative Al Innovation Ss ] Center. , iad “ AS Pa an https://aws.amazon.com/blogs/machine-learning/accelerate-intelligent-document-processing-with-generative-ai-on-aws/ 40/11",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 10,
+      "filename": "page_010.png"
+    }
+  },
+  {
+    "id": "chunk_00077",
+    "text": "8/25/25, 5:45 PM Accelerate intelligent document processing with generative Al on AWS | Artificial Intelligence rote Spencer Romo is a Senior Data Scientist in the AWS Generative Al Innovation Center. Vamsi Thilak Gudi is a Solutions Architect in the AWS World Wide Public Sector team. sa who =! 4A Acknowledgments We would like to thank Abhi Sharma, Akhil Nooney, Aleksei lancheruk, Ava Kong, Boyi Xie, Diego Socolinsky, Guillermo Tantachuco, Ilya Marmur, Jared Kramer, Jason Zhang, Jordan Ratner, Mariano Bellagamba, Mark Aiyer, Niharika Jain, Nimish Radia, Shean Sager, Sirajus Salekin, Yingwei Yu, and many others in our expanding community, for their unwavering vision, passion, contributions, a",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 11,
+      "filename": "page_011.png"
+    }
+  },
+  {
+    "id": "chunk_00078",
+    "text": "sh Radia, Shean Sager, Sirajus Salekin, Yingwei Yu, and many others in our expanding community, for their unwavering vision, passion, contributions, and guidance throughout. fy Like 6 Share Comments Log in to comment https://aws.amazon.com/blogs/machine-learning/accelerate-intelligent-document-processing-with-generative-ai-on-aws/ Wi",
+    "metadata": {
+      "source_type": "page_ocr",
+      "page": 11,
+      "filename": "page_011.png"
+    }
+  }
+]

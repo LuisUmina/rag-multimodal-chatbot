@@ -3,102 +3,102 @@
     "page": 3,
     "image_index": 1,
     "filename": "page_003_img_1.png",
-    "caption": "La imagen representa un diagrama de flujo simple. En la parte superior, hay un rectángulo que indica un inicio, seguido de un rombo que representa una decisión. Las salidas del rombo llevan a dos acciones diferentes, representadas por rectángulos. Cada acción se conecta de nuevo a un rectángulo de finalización. Las flechas indican el flujo de procesos, mostrando la dirección que se sigue desde el inicio hasta la decisión y luego hacia las acciones finales. Este tipo de diagrama se utiliza para visualizar pasos en un proceso o sistema, facilitando la comprensión de las decisiones y acciones a realizar."
+    "caption": "La imagen representa un diagrama de flujo que describe el proceso de un sistema de gestión de inventarios. En la parte superior, se inicia con la \"Recepción de Productos\". Luego se sigue con \"Inspección de Calidad\", donde se verifica el estado de los artículos. Si los productos pasan la inspección, se trasladan a \"Almacenamiento\", de lo contrario, se dirigen a \"Devolución\". Desde \"Almacenamiento\", el flujo continúa hacia \"Procesamiento de Pedidos\", que culmina en \"Despacho\". Cada componente está conectado por flechas que indican la dirección del proceso, destacando las decisiones y pasos clave en la gestión de inventarios."
   },
   {
     "page": 3,
     "image_index": 2,
     "filename": "page_003_img_2.png",
-    "caption": "La imagen muestra una línea horizontal simple con un fondo difuminado que va de blanco a gris. La línea central es delgada y de color blanco, mientras que la parte inferior tiene un borde más oscuro que se difumina hacia el blanco. No hay otros elementos o componentes visibles en la imagen, lo que le da un aspecto minimalista y limpio. La ausencia de texto o gráficos adicionales indica que es un elemento decorativo o un separador visual en un diseño."
+    "caption": "La imagen presenta una línea horizontal simple, que parece ser un separador o divider. No incluye texto ni otros elementos visuales que proporcionen contexto adicional. La línea es de un color blanco brillante en el centro, que se difumina hacia los extremos en tonos más claros, creando un efecto de suavidad. No hay componentes o relaciones adicionales que describir, ya que se trata de un elemento gráfico básico y minimalista."
   },
   {
     "page": 4,
     "image_index": 1,
     "filename": "page_004_img_1.png",
-    "caption": "El diagrama representa un flujo de trabajo en AWS para el procesamiento de documentos PDF mediante diversas herramientas y servicios. \n\n1. Un usuario autenticado envía documentos a un bucket de Amazon S3.\n2. Amazon EventBridge activa un AWS Lambda que envía mensajes a una cola de SQS.\n3. Otra función de Lambda (Queue Processor) procesa estos mensajes.\n4. Se utilizan AWS Step Functions para invocar un proyecto de Amazon Bedrock para la automatización de datos.\n5. Los resultados son procesados y resumidos mediante funciones Lambda.\n6. Amazon DynamoDB se utiliza para rastrear y contar eventos.\n7. Los resultados finales se almacenan en un bucket de S3 en formato JSON. \n\nEste flujo optimiza el manejo y análisis de documentos."
+    "caption": "Este diagrama ilustra un flujo de trabajo en la nube de AWS para el procesamiento de archivos PDF. Un usuario autenticado sube documentos a un bucket de Amazon S3, lo que activa un evento en Amazon EventBridge. Este evento llama a una función Lambda, que envía tareas a una cola de Amazon SQS. A través de AWS Step Functions, se invoca un proyecto de Amazon Bedrock para la automatización de datos, seguido del procesamiento y resumen de resultados mediante otras funciones Lambda. Los resultados se almacenan en un bucket de salida en S3. Además, se utilizan Amazon DynamoDB para el seguimiento y conteo concurrente del proceso."
   },
   {
     "page": 6,
     "image_index": 1,
     "filename": "page_006_img_1.png",
-    "caption": "La imagen muestra un botón rectangular con el texto \"Launch Stack\" en un color negro sobre un fondo naranja. El botón tiene un borde azul y una flecha blanca a la derecha, sugiriendo que al hacer clic, se activa una acción relacionada con el lanzamiento de un \"stack\". El estilo es pixelado, lo que indica un diseño gráfico retro o simplificado. No se pueden identificar otras relaciones o componentes, ya que se trata únicamente de un botón."
+    "caption": "La imagen muestra un botón rectangular de color naranja con bordes azules y el texto en negrita \"Launch Stack\" en letras negras. A la derecha del texto, hay una flecha en un círculo oscuro que apunta hacia la derecha. El diseño indica que se trata de un botón interactivo, posiblemente utilizado en una interfaz de usuario para iniciar o lanzar un proceso o aplicación denominada \"Stack\". No hay otros componentes visibles en la imagen, lo que sugiere que se enfoca en esta única acción."
   },
   {
     "page": 6,
     "image_index": 2,
     "filename": "page_006_img_2.png",
-    "caption": "La imagen muestra un botón rectangular con el texto \"Launch Stack\" en su interior. El fondo del botón es de color naranja con un borde azul. A la derecha del texto, hay un ícono en forma de triángulo apuntando a la derecha, que generalmente indica acción o inicio. Este tipo de botón se utiliza comúnmente en interfaces de usuario para iniciar una acción, como lanzar una aplicación o un conjunto de herramientas. Es un elemento interactivo diseñado para captar la atención del usuario y facilitar la navegación."
+    "caption": "La imagen muestra un botón de interfaz gráfica de usuario con el texto \"Launch Stack\". El botón tiene un fondo de color naranja con bordes azules, y una flecha hacia la derecha en un círculo en la esquina derecha. El diseño sugiere una acción de inicio o ejecución de un proceso relacionado con un \"stack\". Este tipo de botón es común en aplicaciones de software y plataformas en línea, donde el usuario puede hacer clic para iniciar un conjunto de herramientas o funciones. No hay componentes o relaciones adicionales a mencionar, ya que se trata de un elemento aislado de una interfaz."
   },
   {
     "page": 7,
     "image_index": 1,
     "filename": "page_007_img_1.png",
-    "caption": "La imagen muestra una interfaz de la consola GenAI IDP (Intelligent Document Processing) en su vista de carga de documentos. En la parte superior, hay un título que da la bienvenida al usuario. En el lado izquierdo, se encuentran herramientas como \"Document List\" y \"Upload Document(s)\". En el área principal, se puede observar un formulario para subir documentos, donde se puede especificar un prefijo de carpeta opcional. Se selecciona un archivo, \"lending_package.pdf\", y, al finalizar la carga, se muestra un mensaje de éxito indicando que el archivo se ha subido correctamente. También se incluye información sobre la implementación y la versión del sistema."
+    "caption": "La imagen muestra la consola de un sistema de procesamiento de documentos, específicamente GenAI IDP. En el panel izquierdo, se presentan las herramientas disponibles, como la lista de documentos y la opción para subir nuevos documentos. En la sección principal, se indica la funcionalidad de carga de documentos, donde se menciona un prefijo para la carpeta opcional y se permite seleccionar archivos a subir. Se destaca que se ha cargado exitosamente un archivo llamado \"lending_package.pdf\", junto con su clave de objeto. También se muestra información sobre la implementación del sistema, como el nombre del stack, versión y fecha de construcción."
   },
   {
     "page": 8,
     "image_index": 1,
     "filename": "page_008_img_1.png",
-    "caption": "La imagen muestra un flujo de procesamiento de documentos con un enfoque en la automatización de datos. En la parte superior, se proporciona una visión general de la ejecución, indicando que está en estado \"RUNNING\" (en ejecución) con una duración de 1 minuto y 50 segundos. El flujo de procesamiento incluye cinco pasos: \"InvokeDataAutomation\" y \"ProcessResultsStep\", que han sido completados con éxito; \"CheckHITLRequired\" y \"SummarizationChoice\", también exitosos; y \"SummarizationStep\", que actualmente está en ejecución. Los estados de cada paso están indicados con símbolos de colores: verde para completados, azul para en ejecución, rojo para fallidos y gris para pendientes."
+    "caption": "La imagen muestra un flujo de procesamiento de documentos en ejecución. En la parte superior, se indica que el estado es \"RUNNING\" con una duración de 1:50 minutos y la fecha de inicio. El flujo de procesamiento incluye cinco pasos: \n\n1. **InvokeDataAutomation** (sucedido),\n2. **ProcessResultsStep** (sucedido),\n3. **CheckHITLRequired** (sucedido),\n4. **SummarizationChoice** (sucedido),\n5. **SummarizationStep** (en ejecución). \n\nLos pasos completados están marcados en verde, el paso en curso en azul claro y no hay pasos pendientes o fallidos. Se utiliza un gráfico para ilustrar el progreso de cada etapa."
   },
   {
     "page": 8,
     "image_index": 2,
     "filename": "page_008_img_2.png",
-    "caption": "La imagen muestra un editor de documentos visual para un permiso de conducir de los Estados Unidos. En la parte izquierda, se visualiza la imagen del permiso con detalles como el nombre del titular y la fecha de expiración. A la derecha, se presenta un formulario con datos extraídos automáticamente, que incluye información sobre el color de los ojos, ciudad, código postal, estado y dirección. Cada campo tiene un porcentaje de confianza que indica la precisión de la información extraída. Al final, hay opciones para cancelar o finalizar la edición."
+    "caption": "La imagen muestra un editor de documentos visual, específicamente de una licencia de conducir de Estados Unidos. A la izquierda, se presenta una imagen de la licencia, con datos como el nombre, dirección, fecha de nacimiento y una foto del titular. A la derecha, se listan los datos extraídos del documento, incluyendo detalles como el color de ojos, ciudad, código postal, estado, dirección y clase de licencia, junto con los niveles de confianza en los datos detectados. En la parte inferior, hay opciones para hacer zoom y pan en la imagen, así como botones para cancelar o confirmar la edición."
   },
   {
     "page": 9,
     "image_index": 1,
     "filename": "page_009_img_1.png",
-    "caption": "La imagen muestra la interfaz de una consola de software llamada GenAI IDP, que parece ser un sistema de procesamiento de documentos. En el lateral izquierdo, hay herramientas como \"Document KB\" y opciones para subir documentos y configurar. En la parte central, se observa un área de preguntas y respuestas donde se consulta sobre la fecha de expiración de la licencia de conducir de Maria Garcia y el estado en que fue emitida. La interfaz incluye referencias a diferentes documentos (PDF) de donde se extraen las respuestas. Se observa información relevante sobre la versión del software y datos de implementación en la parte inferior izquierda."
+    "caption": "La imagen muestra la interfaz de una consola de procesamiento de documentos llamada \"GenAI IDP Console\". En la parte izquierda, se encuentran herramientas como \"Document List\", \"Upload Document(s)\", y \"View/Edit Configuration\". En la sección central, se presenta el \"Documents Knowledge Base Query Tool\", que permite hacer consultas sobre un documento, con ejemplos de preguntas y respuestas relacionadas con la licencia de conducir de una persona llamada María García. Se indican también las fuentes de información utilizadas. En la parte inferior, hay un campo para escribir preguntas y un botón \"Submit\" para enviarlas."
   },
   {
     "page": 10,
     "image_index": 1,
     "filename": "page_010_img_1.png",
-    "caption": "La imagen muestra a un hombre sonriendo frente a la cámara. Tiene cabello corto y usa gafas. Está vestido con una camisa de cuadros. El fondo es oscuro, lo que resalta su rostro y expresión amigable. No hay otros elementos o componentes en la imagen. La atmósfera es profesional y accesible."
+    "caption": "La imagen muestra a un hombre sonriente con gafas, que lleva una camisa de cuadros. El fondo es negro, lo que resalta su rostro y expresión. No se puede determinar más información sobre su identidad o contexto a partir de la imagen."
   },
   {
     "page": 10,
     "image_index": 2,
     "filename": "page_010_img_2.png",
-    "caption": "La imagen muestra a un hombre sonriendo con una barba corta y cabello castaño. Lleva una camisa de color claro sobre una camiseta oscura. El fondo es negro, lo que destaca su rostro y expresión amigable. No hay otros elementos o características adicionales en la imagen."
+    "caption": "La imagen muestra a un hombre joven con una sonrisa amigable. Tiene cabello corto y barba ligera. Viste una camiseta negra bajo una camisa de color claro. El fondo es oscuro, lo que hace que su rostro resalte. La expresión del hombre transmite confianza y amabilidad. No hay otros elementos o texto en la imagen que distraigan de su retrato."
   },
   {
     "page": 10,
     "image_index": 3,
     "filename": "page_010_img_3.png",
-    "caption": "La imagen muestra un retrato de una persona con cabello corto y oscuro, vistiendo una camiseta de color azul claro. El fondo es negro, lo que ayuda a resaltar la figura. La expresión facial es neutral, y la persona se ve centrada y enfocada en la cámara. No hay otros elementos ni decoraciones que distraigan, lo que indica que es un retrato formal o profesional."
+    "caption": "La imagen muestra un retrato de un hombre con cabello oscuro y piel clara, vestido con una camisa azul. Se presenta en un fondo negro, lo que hace que su figura resalte. La expresión facial del hombre es neutra y directa, mirando a la cámara. No hay otros elementos o contexto en la imagen que aporten información adicional."
   },
   {
     "page": 10,
     "image_index": 4,
     "filename": "page_010_img_4.png",
-    "caption": "La imagen muestra a un hombre de mediana edad con cabello corto y una ligera barba, sonriendo. Lleva una camisa blanca y se encuentra frente a un fondo con plantas verdes. El ambiente parece ser interior, probablemente en un lugar de trabajo o una oficina. No hay otros elementos visibles que se puedan describir con detalle. El enfoque principal de la imagen es el hombre, que proyecta una actitud amigable y accesible."
+    "caption": "La imagen muestra a un hombre con una camiseta blanca y un bigote, sonriendo en un entorno con plantas verdes de fondo. No hay elementos gráficos o diagramas en la imagen; es un retrato de una persona en un ambiente natural o de oficina. La iluminación es clara y resalta las características del rostro del hombre, quien parece estar en un momento de camaradería o atención. No se proporcionan otros contextos o detalles adicionales sobre el entorno."
   },
   {
     "page": 10,
     "image_index": 5,
     "filename": "page_010_img_5.png",
-    "caption": "La imagen muestra a un hombre de aspecto amigable, con cabello corto y barba bien cuidada, posando frente a un fondo natural con plantas verdes. Está vestido con una camiseta oscura y tiene una expresión serena. La iluminación es suave, lo que sugiere un ambiente tranquilo. El enfoque principal es su rostro y parte superior del torso, lo que permite resaltar su expresión y la conexión con el entorno natural."
+    "caption": "La imagen muestra a un hombre de pie frente a un fondo natural, con vegetación en tonos verdes. Tiene el cabello corto y una barba bien cuidada. Viste una camiseta de color oscuro y sonríe levemente, dando una impresión de amabilidad y confianza. La iluminación resalta su rostro y la textura del fondo. No hay otros elementos o detalles en la imagen que desvíen la atención del sujeto principal."
   },
   {
     "page": 10,
     "image_index": 6,
     "filename": "page_010_img_6.png",
-    "caption": "La imagen muestra a un hombre con gafas de montura oscura y una barba ligera. Lleva una camisa de color azul y tiene un cabello oscuro. Su expresión facial es seria y mira directamente hacia la cámara. El fondo es de un tono gris claro, lo cual resalta su figura. No hay elementos adicionales o gráficos en la imagen, ya que se trata únicamente de un retrato."
+    "caption": "La imagen muestra a un hombre con una camisa azul y gafas, posando frente a un fondo gris. Tiene una expresión seria y parece estar en un entorno profesional, posiblemente relacionado con un ámbito académico o laboral. Su cabello es oscuro y tiene una barba recortada. No hay otros elementos o componentes visibles que se puedan describir en la imagen."
   },
   {
     "page": 11,
     "image_index": 1,
     "filename": "page_011_img_1.png",
-    "caption": "En la imagen se puede ver a un hombre sonriendo mientras sostiene la mano de un caballo. El hombre lleva una camiseta gris y una gorra. Detrás de él, hay un grupo de personas en un entorno al aire libre, con árboles y un cielo despejado. El ambiente parece ser un evento o una feria, dado la cantidad de personas y la disposición del espacio. El caballo tiene un arnés y parece estar bien cuidado. La escena transmite una sensación de alegría y conexión con los animales."
+    "caption": "En la imagen se observa a un hombre sonriendo mientras sostiene la cabeza de un caballo. El hombre lleva una camiseta gris y una gorra. A su alrededor, hay un grupo de personas en un ambiente al aire libre, bajo un cielo despejado y soleado. Se puede ver un campo o pradera en el fondo, y algunas estructuras o puestos típicos de un evento. El ambiente parece festivo y amigable, sugiriendo que están en un evento relacionado con animales o actividades al aire libre."
   },
   {
     "page": 11,
     "image_index": 2,
     "filename": "page_011_img_2.png",
-    "caption": "La imagen muestra el retrato de un hombre sonriente con cabello oscuro y una camisa de color claro. El fondo es negro, lo que resalta el rostro del individuo. No hay ningún diagrama ni componentes adicionales en la imagen; simplemente se trata de una fotografía de retrato. El enfoque está en la expresión facial amigable y la presentación personal del sujeto."
+    "caption": "La imagen muestra el retrato de un hombre sonriendo, con cabello oscuro y piel morena, que lleva una camisa de botones clara. El fondo es negro, lo que hace que su rostro se destaque. No hay otros elementos ni texto en la imagen."
   }
 ]
