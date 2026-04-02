@@ -4,6 +4,7 @@ import json
 import re
 import shutil
 from pathlib import Path
+from typing import Any
 
 from app.config import settings
 
@@ -17,13 +18,9 @@ except ImportError:
     ImageOps = None
 
 
-def extract_ocr_from_page_images(
-    page_images_dir: str = "data/processed/page_images",
-    page_ocr_output_file: str = "data/processed/page_ocr.json",
-) -> dict[str, list]:
-    """
-    Extrae texto literal visible desde imágenes de página completa.
-    """
+def extract_ocr_from_page_images(page_images_dir: str = "data/processed/page_images", page_ocr_output_file: str = "data/processed/page_ocr.json",) -> dict[str, list]:
+    """Extract literal text from rendered full-page images."""
+    
     image_dir = Path(page_images_dir)
     items: list[dict] = []
 
@@ -38,7 +35,7 @@ def extract_ocr_from_page_images(
         try:
             ocr_text = _extract_text_with_local_ocr(str(image_path))
         except Exception as exc:
-            print(f"Error OCR en página {page_number}: {exc}")
+            print(f"OCR error on page {page_number}: {exc}")
             ocr_text = ""
 
         items.append(
@@ -71,16 +68,19 @@ def _configure_tesseract_binary() -> None:
 
 def _extract_text_with_local_ocr(image_path: str) -> str:
     if not pytesseract or not Image:
-        raise RuntimeError("Dependencias OCR no instaladas. Instala pytesseract y Pillow.")
+        raise RuntimeError("OCR dependencies are missing. Install pytesseract and Pillow.")
 
-    tesseract_cmd = getattr(pytesseract.pytesseract, "tesseract_cmd", "tesseract")
-    if not settings.tesseract_cmd and not shutil.which("tesseract"):
+    # Validate where Tesseract binary should be loaded from.
+    if settings.tesseract_cmd:
+        if not Path(settings.tesseract_cmd).exists():
+            raise RuntimeError(f"TESSERACT_CMD does not exist: {settings.tesseract_cmd}")
+    elif not shutil.which("tesseract"):
         raise RuntimeError(
-            "No se encontró el ejecutable tesseract en PATH. "
-            "Instala Tesseract OCR o define TESSERACT_CMD en .env."
+            "Tesseract executable was not found in PATH. "
+            "Install Tesseract OCR or set TESSERACT_CMD in .env."
         )
-    if settings.tesseract_cmd and not Path(settings.tesseract_cmd).exists():
-        raise RuntimeError(f"TESSERACT_CMD no existe: {settings.tesseract_cmd}")
+
+    assert Image is not None  # Narrow type for static checkers.
 
     with Image.open(image_path) as image:
         prepared = _preprocess_for_ocr(image)
@@ -93,7 +93,8 @@ def _extract_text_with_local_ocr(image_path: str) -> str:
     return _normalize_ocr_text(raw_text)
 
 
-def _preprocess_for_ocr(image: Image.Image) -> Image.Image:
+def _preprocess_for_ocr(image: Any) -> Any:
+    """Apply a lightweight preprocessing chain to improve OCR readability."""
     grayscale = ImageOps.grayscale(image)
     autocontrast = ImageOps.autocontrast(grayscale)
     sharpened = autocontrast.filter(ImageFilter.SHARPEN)
@@ -101,6 +102,7 @@ def _preprocess_for_ocr(image: Image.Image) -> Image.Image:
 
 
 def _normalize_ocr_text(text: str) -> str:
+    """Normalize OCR output by collapsing extra whitespace and blank lines."""
     cleaned = text.replace("\r", "\n")
     cleaned = re.sub(r"\n{3,}", "\n\n", cleaned)
     cleaned = re.sub(r"[ \t]+", " ", cleaned)

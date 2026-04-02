@@ -1,147 +1,120 @@
 ﻿from __future__ import annotations
+
 import base64
 import json
 from pathlib import Path
-import fitz
-from app.services.openai_client import get_openai_client
+
 from app.config import settings
+from app.rag.page_images import extract_embedded_images
+from app.services.openai_client import get_openai_client
 
 client = get_openai_client()
 
-def extract_and_caption_images(pdf_path: str, images_output_dir: str = "data/processed/images", captions_output_file: str = "data/processed/image_captions.json",) -> dict[str, list]:
-    """
-    Extrae imágenes del PDF y genera captions con OpenAI Vision.
-    """
-    
-    images_dir = Path(images_output_dir)
-    images_dir.mkdir(parents=True, exist_ok=True)
+IMAGE_CAPTION_PROMPT = (
+    "Briefly describe this image. "
+    "If it is a diagram, include main components and relationships. "
+    "Maximum 120 words."
+)
 
-    captions_data = []
-    extracted_images = []
+PAGE_VISION_PROMPT = (
+    "Analyze this complete document page. "
+    "Return: (1) page summary, "
+    "(2) key visible text, (3) important components/entities, "
+    "(4) relationships or flow if diagram present. Maximum 220 words."
+)
 
-    with fitz.open(pdf_path) as document:
-        for page_index in range(len(document)):
-            page = document[page_index]
-            page_number = page_index + 1
-            image_list = page.get_images(full=True)
 
-            for img_index, img_reference in enumerate(image_list):
-                try:
-                    # ID of image
-                    xref = img_reference[0]
-                    # Select image by ID
-                    pix = fitz.Pixmap(document, xref)
+def caption_extracted_images(extracted_images: list[dict], captions_output_file: str) -> dict[str, list]:
+    """Generate captions for already extracted embedded image items."""
+    captions_data: list[dict] = []
 
-                    image_filename = f"page_{page_number:03d}_img_{img_index + 1}.png"
-                    image_path = images_dir / image_filename
+    for item in extracted_images:
+        page_number = item.get("page")
+        image_index = item.get("image_index")
+        filename = item.get("filename")
+        image_path = item.get("path", "")
 
-                    # Is this image RGB (or simpler)?
-                    if pix.n - pix.alpha < 4:
-                        pix.save(str(image_path))
-                    else:
-                        pix_rgb = fitz.Pixmap(fitz.csRGB, pix)
-                        pix_rgb.save(str(image_path))
-                        pix_rgb = None
-                    pix = None
-
-                    extracted_images.append(
-                        {
-                            "page": page_number,
-                            "image_index": img_index + 1,
-                            "filename": image_filename,
-                            "path": str(image_path),
-                        }
-                    )
-
-                    caption = _generate_caption_with_vision(str(image_path))
-                    captions_data.append(
-                        {
-                            "page": page_number,
-                            "image_index": img_index + 1,
-                            "filename": image_filename,
-                            "caption": caption,
-                        }
-                    )
-
-                except Exception as exc:
-                    print(f"Error procesando imagen en página {page_number}: {exc}")
-                    continue
+        try:
+            caption = _run_vision_prompt(
+                image_path=str(image_path),
+                prompt_text=IMAGE_CAPTION_PROMPT,
+                max_tokens=250,
+                empty_fallback="Image without description",
+            )
+            captions_data.append(
+                {
+                    "page": page_number,
+                    "image_index": image_index,
+                    "filename": filename,
+                    "caption": caption,
+                }
+            )
+        except Exception as exc:
+            print(f"Error processing image on page {page_number}: {exc}")
+            continue
 
     captions_path = Path(captions_output_file)
     captions_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(captions_path, "w", encoding="utf-8") as f:
-        json.dump(captions_data, f, indent=2, ensure_ascii=False)
+    captions_path.write_text(
+        json.dumps(captions_data, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
 
-    return {
-        "extracted_images": extracted_images,
-        "captions": captions_data,
-    }
+    return {"captions": captions_data}
 
 
-def render_and_caption_pages(
-    pdf_path: str,
-    pages_output_dir: str = "data/processed/page_images",
-    page_vision_output_file: str = "data/processed/page_vision.json",
-) -> dict[str, list]:
-    """
-    Renderiza cada página completa como imagen y genera descripción/lectura visual.
-    """
-    output_dir = Path(pages_output_dir)
-    output_dir.mkdir(parents=True, exist_ok=True)
-
+def caption_page_images(pages_input_dir: str = "data/processed/page_images", page_vision_output_file: str = "data/processed/page_vision.json",) -> dict[str, list]:
+    """Generate page-level vision text from pre-rendered page images."""
+    
+    input_dir = Path(pages_input_dir)
     page_items: list[dict] = []
 
-    with fitz.open(pdf_path) as document:
-        for page_index in range(len(document)):
-            page = document[page_index]
-            page_number = page_index + 1
+    if not input_dir.exists():
+        return {"pages": page_items}
 
-            # Render básico (2x) para mejor lectura visual
-            matrix = fitz.Matrix(2, 2)
-            pix = page.get_pixmap(matrix=matrix, alpha=False)
-            page_filename = f"page_{page_number:03d}.png"
-            page_path = output_dir / page_filename
-            pix.save(str(page_path))
+    for page_path in sorted(input_dir.glob("page_*.png")):
+        page_number = int(page_path.stem.split("_")[-1])
 
-            try:
-                vision_text = _generate_page_vision_text(str(page_path))
-            except Exception as exc:
-                print(f"Error procesando página completa {page_number}: {exc}")
-                vision_text = ""
-
-            page_items.append(
-                {
-                    "page": page_number,
-                    "filename": page_filename,
-                    "path": str(page_path),
-                    "vision_text": vision_text,
-                }
+        try:
+            vision_text = _run_vision_prompt(
+                image_path=str(page_path),
+                prompt_text=PAGE_VISION_PROMPT,
+                max_tokens=420,
+                empty_fallback="",
             )
+        except Exception as exc:
+            print(f"Error processing full page {page_number}: {exc}")
+            vision_text = ""
+
+        page_items.append(
+            {
+                "page": page_number,
+                "filename": page_path.name,
+                "path": str(page_path),
+                "vision_text": vision_text,
+            }
+        )
 
     output_path = Path(page_vision_output_file)
     output_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(output_path, "w", encoding="utf-8") as file:
-        json.dump(page_items, file, indent=2, ensure_ascii=False)
+    output_path.write_text(
+        json.dumps(page_items, indent=2, ensure_ascii=False),
+        encoding="utf-8",
+    )
 
     return {"pages": page_items}
 
 
-def _generate_caption_with_vision(image_path: str) -> str:
-    """Genera descripción usando un modelo vision vigente con fallback automático."""
-
-    with open(image_path, "rb") as img_file:
-        image_data = base64.standard_b64encode(img_file.read()).decode("utf-8")
+def _run_vision_prompt(image_path: str, prompt_text: str, max_tokens: int, empty_fallback: str) -> str:
+    """Run a vision prompt with model fallback and return text output."""
+    with open(image_path, "rb") as image_file:
+        image_data = base64.standard_b64encode(image_file.read()).decode("utf-8")
 
     candidate_models = [settings.openai_vision_model, "gpt-4o-mini", "gpt-4o"]
-    unique_models: list[str] = []
-
-    for model_name in candidate_models:
-        if model_name and model_name not in unique_models:
-            unique_models.append(model_name)
-
+    models = list(dict.fromkeys(model for model in candidate_models if model))
     last_error: Exception | None = None
 
-    for model_name in unique_models:
+    for model_name in models:
         try:
             response = client.chat.completions.create(
                 model=model_name,
@@ -155,19 +128,14 @@ def _generate_caption_with_vision(image_path: str) -> str:
                             },
                             {
                                 "type": "text",
-                                "text": (
-                                    "Briefly describe this image. "
-                                    "If it is a diagram, include main components and relationships. "
-                                    "Maximum 120 words."
-                                ),
+                                "text": prompt_text,
                             },
                         ],
                     }
                 ],
-                max_tokens=250,
+                max_tokens=max_tokens,
             )
-            return response.choices[0].message.content or "Imagen sin descripción"
-        
+            return response.choices[0].message.content or empty_fallback
         except Exception as exc:
             last_error = exc
             error_text = str(exc).lower()
@@ -175,55 +143,5 @@ def _generate_caption_with_vision(image_path: str) -> str:
                 continue
             raise
 
-    raise RuntimeError(f"No fue posible generar caption con modelos vision disponibles: {last_error}")
+    raise RuntimeError(f"Could not complete vision prompt with available models: {last_error}")
 
-
-def _generate_page_vision_text(image_path: str) -> str:
-    """Extrae información densa de una página completa renderizada."""
-    with open(image_path, "rb") as img_file:
-        image_data = base64.standard_b64encode(img_file.read()).decode("utf-8")
-
-    candidate_models = [settings.openai_vision_model, "gpt-4o-mini", "gpt-4o"]
-    unique_models: list[str] = []
-
-    for model_name in candidate_models:
-        if model_name and model_name not in unique_models:
-            unique_models.append(model_name)
-
-    last_error: Exception | None = None
-
-    for model_name in unique_models:
-        try:
-            response = client.chat.completions.create(
-                model=model_name,
-                messages=[
-                    {
-                        "role": "user",
-                        "content": [
-                            {
-                                "type": "image_url",
-                                "image_url": {"url": f"data:image/png;base64,{image_data}"},
-                            },
-                            {
-                                "type": "text",
-                                "text": (
-                                    "Analyze this complete document page. "
-                                    "Return: (1) page summary, "
-                                    "(2) key visible text, (3) important components/entities, "
-                                    "(4) relationships or flow if diagram present. Maximum 220 words."
-                                ),
-                            },
-                        ],
-                    }
-                ],
-                max_tokens=420,
-            )
-            return response.choices[0].message.content or ""
-        except Exception as exc:
-            last_error = exc
-            error_text = str(exc).lower()
-            if "deprecated" in error_text or "model_not_found" in error_text:
-                continue
-            raise
-
-    raise RuntimeError(f"No fue posible generar extracción visual por página: {last_error}")
