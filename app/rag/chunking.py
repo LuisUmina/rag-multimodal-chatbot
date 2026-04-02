@@ -1,19 +1,29 @@
 from __future__ import annotations
+
 import json
 from pathlib import Path
 
 
+NOISY_CAPTION_PATTERNS = [
+	# English patterns (current pipeline language)
+	"portrait",
+	"smiling man",
+	"dark background",
+	"decorative divider",
+	"simple horizontal line",
+	"visual separator",
+	# Spanish legacy patterns (for backward compatibility)
+	"retrato",
+	"hombre sonriendo",
+	"fondo negro",
+	"línea horizontal simple",
+	"elemento decorativo",
+]
+
+
 def _is_relevant_caption(caption: str) -> bool:
 	text = caption.lower()
-
-	noisy_patterns = [
-		"retrato",
-		"hombre sonriendo",
-		"fondo negro",
-		"línea horizontal simple",
-		"elemento decorativo",
-	]
-	return not any(pattern in text for pattern in noisy_patterns)
+	return not any(pattern in text for pattern in NOISY_CAPTION_PATTERNS)
 
 
 def _chunk_text(text: str, chunk_size: int, chunk_overlap: int) -> list[str]:
@@ -35,7 +45,34 @@ def _chunk_text(text: str, chunk_size: int, chunk_overlap: int) -> list[str]:
 	return chunks
 
 
-def build_multimodal_chunks(captions_file: str = "data/processed/image_captions.json", text_dir: str = "data/processed/text", page_vision_file: str = "data/processed/page_vision.json", chunk_size: int = 700, chunk_overlap: int = 150,) -> list[dict]:
+def _append_chunk_parts(
+	chunks: list[dict],
+	chunk_id: int,
+	text: str,
+	chunk_size: int,
+	chunk_overlap: int,
+	metadata: dict,
+) -> int:
+	for part in _chunk_text(text, chunk_size, chunk_overlap):
+		chunks.append(
+			{
+				"id": f"chunk_{chunk_id:05d}",
+				"text": part,
+				"metadata": metadata,
+			}
+		)
+		chunk_id += 1
+	return chunk_id
+
+
+def build_multimodal_chunks(
+	captions_file: str = "data/processed/image_captions.json",
+	text_dir: str = "data/processed/text",
+	page_vision_file: str = "data/processed/page_vision.json",
+	page_ocr_file: str = "data/processed/page_ocr.json",
+	chunk_size: int = 700,
+	chunk_overlap: int = 150,
+) -> list[dict]:
 	chunks: list[dict] = []
 	chunk_id = 1
 
@@ -47,20 +84,19 @@ def build_multimodal_chunks(captions_file: str = "data/processed/image_captions.
 			if not caption or not _is_relevant_caption(caption):
 				continue
 
-			for part in _chunk_text(caption, chunk_size, chunk_overlap):
-				chunks.append(
-					{
-						"id": f"chunk_{chunk_id:05d}",
-						"text": part,
-						"metadata": {
-							"source_type": "image_caption",
-							"page": item.get("page"),
-							"image_index": item.get("image_index"),
-							"filename": item.get("filename"),
-						},
-					}
-				)
-				chunk_id += 1
+			chunk_id = _append_chunk_parts(
+				chunks=chunks,
+				chunk_id=chunk_id,
+				text=caption,
+				chunk_size=chunk_size,
+				chunk_overlap=chunk_overlap,
+				metadata={
+					"source_type": "image_caption",
+					"page": item.get("page"),
+					"image_index": item.get("image_index"),
+					"filename": item.get("filename"),
+				},
+			)
 
 	text_path = Path(text_dir)
 	if text_path.exists():
@@ -70,19 +106,18 @@ def build_multimodal_chunks(captions_file: str = "data/processed/image_captions.
 				continue
 
 			page = int(file_path.stem.split("_")[-1])
-			for part in _chunk_text(content, chunk_size, chunk_overlap):
-				chunks.append(
-					{
-						"id": f"chunk_{chunk_id:05d}",
-						"text": part,
-						"metadata": {
-							"source_type": "page_text",
-							"page": page,
-							"filename": file_path.name,
-						},
-					}
-				)
-				chunk_id += 1
+			chunk_id = _append_chunk_parts(
+				chunks=chunks,
+				chunk_id=chunk_id,
+				text=content,
+				chunk_size=chunk_size,
+				chunk_overlap=chunk_overlap,
+				metadata={
+					"source_type": "page_text",
+					"page": page,
+					"filename": file_path.name,
+				},
+			)
 
 	page_vision_path = Path(page_vision_file)
 	if page_vision_path.exists():
@@ -92,21 +127,20 @@ def build_multimodal_chunks(captions_file: str = "data/processed/image_captions.
 			if not vision_text:
 				continue
 
-			for part in _chunk_text(vision_text, chunk_size, chunk_overlap):
-				chunks.append(
-					{
-						"id": f"chunk_{chunk_id:05d}",
-						"text": part,
-						"metadata": {
-							"source_type": "page_vision",
-							"page": item.get("page"),
-							"filename": item.get("filename"),
-						},
-					}
-				)
-				chunk_id += 1
+			chunk_id = _append_chunk_parts(
+				chunks=chunks,
+				chunk_id=chunk_id,
+				text=vision_text,
+				chunk_size=chunk_size,
+				chunk_overlap=chunk_overlap,
+				metadata={
+					"source_type": "page_vision",
+					"page": item.get("page"),
+					"filename": item.get("filename"),
+				},
+			)
 
-	page_ocr_path = Path("data/processed/page_ocr.json")
+	page_ocr_path = Path(page_ocr_file)
 	if page_ocr_path.exists():
 		page_items = json.loads(page_ocr_path.read_text(encoding="utf-8"))
 		for item in page_items:
@@ -114,18 +148,17 @@ def build_multimodal_chunks(captions_file: str = "data/processed/image_captions.
 			if not ocr_text:
 				continue
 
-			for part in _chunk_text(ocr_text, chunk_size, chunk_overlap):
-				chunks.append(
-					{
-						"id": f"chunk_{chunk_id:05d}",
-						"text": part,
-						"metadata": {
-							"source_type": "page_ocr",
-							"page": item.get("page"),
-							"filename": item.get("filename"),
-						},
-					}
-				)
-				chunk_id += 1
+			chunk_id = _append_chunk_parts(
+				chunks=chunks,
+				chunk_id=chunk_id,
+				text=ocr_text,
+				chunk_size=chunk_size,
+				chunk_overlap=chunk_overlap,
+				metadata={
+					"source_type": "page_ocr",
+					"page": item.get("page"),
+					"filename": item.get("filename"),
+				},
+			)
 
 	return chunks

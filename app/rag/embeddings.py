@@ -1,9 +1,11 @@
 from __future__ import annotations
+
 from app.config import settings
 from app.services.openai_client import get_openai_client
 
 
 def embed_texts(texts: list[str], model: str | None = None) -> list[list[float]]:
+	"""Generate embeddings for a list of texts using the configured OpenAI model."""
 	if not texts:
 		return []
 
