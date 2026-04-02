@@ -7,90 +7,120 @@ import fitz
 from app.config import settings
 from app.rag.image_caption import extract_and_caption_images, render_and_caption_pages
 from app.rag.ocr import extract_ocr_from_page_images
+from app.rag.text_extraction import extract_page_text
 
 
-def ingest_pdf(pdf_path: str, save_extracted_text: bool = True) -> dict[str, int | str]:
-	"""
-	Ingesta completa del PDF: texto, imágenes y captions multimodales.
-	"""
+def ingest_pdf(pdf_path: str) -> dict[str, int | str]:
+	"""Run multimodal PDF ingestion and return summary metrics."""
 
 	start = perf_counter()
 	source = Path(pdf_path)
 
 	if not source.exists():
-		raise FileNotFoundError(f"No se encontró el PDF en la ruta: {source}")
+		raise FileNotFoundError(f"The PDF was not found in the path: {source}")
 
-	text_output_dir = Path("data/processed/text")
-	if save_extracted_text:
-		text_output_dir.mkdir(parents=True, exist_ok=True)
+	# 1) Extract classic page text.
+	pages_processed, pages_with_text = _run_page_text_step(source=source)
 
-	pages_processed = 0
-	images_extracted = 0
-	chunks_created = 0
+	# 2) Extract embedded images and generate image captions.
+	images_captioned = _run_image_caption_step(source=source)
 
-	# Paso 1: Extraer texto por página
-	with fitz.open(source) as document:
-		for page_index in range(len(document)):
-			page = document[page_index]
-			page_number = page_index + 1
+	# 3) Generate page-level semantic vision output (also renders page images).
+	pages_with_vision = _run_page_vision_step(source=source)
 
-			page_text = page.get_text("text").strip()
-			image_count = len(page.get_images(full=True))
+	# 4) Run local OCR on full-page images.
+	pages_with_ocr = _run_page_ocr_step(source=source)
 
-			pages_processed += 1
-			images_extracted += image_count
-			if page_text:
-				chunks_created += 1
-
-			if save_extracted_text:
-				target = text_output_dir / f"page_{page_number:03d}.txt"
-				target.write_text(page_text, encoding="utf-8")
-
-	# Paso 2: Extraer imágenes internas y generar captions
-	if settings.save_extracted_images:
-		try:
-			multimodal_data = extract_and_caption_images(pdf_path=str(source), images_output_dir="data/processed/images", captions_output_file="data/processed/image_captions.json",)
-			
-			# Contar chunks adicionales por imágenes con captions
-			images_with_captions = len(multimodal_data["captions"])
-			chunks_created += images_with_captions
-		
-		except Exception as exc:
-			print(f"Error durante extracción multimodal: {exc}")
-
-	# Paso 3: Renderizar páginas completas y extraer contenido visual
-	if settings.save_page_vision:
-		try:
-			page_vision_data = render_and_caption_pages(
-				pdf_path=str(source),
-				pages_output_dir="data/processed/page_images",
-				page_vision_output_file="data/processed/page_vision.json",
-			)
-
-			pages_with_vision = sum(1 for item in page_vision_data["pages"] if item.get("vision_text", "").strip())
-			chunks_created += pages_with_vision
-		except Exception as exc:
-			print(f"Error durante extracción visual por página: {exc}")
-
-	# Paso 4: OCR literal de páginas completas
-	if settings.save_page_ocr:
-		try:
-			ocr_data = extract_ocr_from_page_images(
-				page_images_dir="data/processed/page_images",
-				page_ocr_output_file="data/processed/page_ocr.json",
-			)
-
-			pages_with_ocr = sum(1 for item in ocr_data["pages"] if item.get("ocr_text", "").strip())
-			chunks_created += pages_with_ocr
-		except Exception as exc:
-			print(f"Error durante OCR por página: {exc}")
-
+	chunks_created = pages_with_text + images_captioned + pages_with_vision + pages_with_ocr
 	duration_ms = int((perf_counter() - start) * 1000)
 
 	return {
 		"pdf_path": str(source),
 		"pages_processed": pages_processed,
-		"images_extracted": images_extracted,
+		"images_extracted": images_captioned,
 		"chunks_created": chunks_created,
 		"processing_time_ms": duration_ms,
 	}
+
+
+def _run_page_text_step(source: Path) -> tuple[int, int]:
+	"""Run page-text extraction."""
+	try:
+		return extract_page_text(source=source, save_extracted_text=settings.save_extracted_text)
+	
+	except Exception as exc:
+		print(f"Error during page text extraction: {exc}")
+		raise
+
+
+def _run_image_caption_step(source: Path) -> int:
+	"""Extract embedded images and return how many captions were produced."""
+	
+	if not settings.save_extracted_images:
+		return 0
+
+	try:
+		multimodal_data = extract_and_caption_images(
+			pdf_path=str(source),
+			images_output_dir="data/processed/images",
+			captions_output_file="data/processed/image_captions.json",
+		)
+	
+		return len(multimodal_data.get("captions", []))
+	
+	except Exception as exc:
+		print(f"Error during image caption extraction: {exc}")
+		return 0
+
+
+def _run_page_vision_step(source: Path) -> int:
+	"""Run full-page vision analysis and return pages with non-empty vision text."""
+	if not settings.save_page_vision:
+		return 0
+
+	try:
+		page_vision_data = render_and_caption_pages(
+			pdf_path=str(source),
+			pages_output_dir="data/processed/page_images",
+			page_vision_output_file="data/processed/page_vision.json",
+		)
+		return sum(1 for item in page_vision_data.get("pages", []) if item.get("vision_text", "").strip())
+	except Exception as exc:
+		print(f"Error during page-level vision extraction: {exc}")
+		return 0
+
+
+def _run_page_ocr_step(source: Path) -> int:
+	"""Run local OCR for page images and return pages with non-empty OCR text."""
+	if not settings.save_page_ocr:
+		return 0
+
+	# Ensure page images exist when OCR is enabled without page-vision step.
+	if not settings.save_page_vision:
+		_render_page_images(source, pages_output_dir="data/processed/page_images")
+
+	try:
+		ocr_data = extract_ocr_from_page_images(
+			page_images_dir="data/processed/page_images",
+			page_ocr_output_file="data/processed/page_ocr.json",
+		)
+		return sum(1 for item in ocr_data.get("pages", []) if item.get("ocr_text", "").strip())
+	except Exception as exc:
+		print(f"Error during page OCR extraction: {exc}")
+		return 0
+
+
+def _render_page_images(source: Path, pages_output_dir: str) -> None:
+	"""Render full-page PNG images used by OCR and vision steps."""
+	output_dir = Path(pages_output_dir)
+	output_dir.mkdir(parents=True, exist_ok=True)
+
+	with fitz.open(source) as document:
+		for page_index in range(len(document)):
+			page = document[page_index]
+			page_number = page_index + 1
+
+			matrix = fitz.Matrix(2, 2)
+			pix = page.get_pixmap(matrix=matrix, alpha=False)
+			page_filename = f"page_{page_number:03d}.png"
+			pix.save(str(output_dir / page_filename))
