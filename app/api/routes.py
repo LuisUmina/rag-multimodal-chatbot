@@ -19,11 +19,8 @@ def health() -> dict[str, str]:
 @router.post("/ingest", response_model=IngestResponse)
 def ingest(request: IngestRequest) -> IngestResponse:
     try:
-        
-        result = ingest_pdf(
-            pdf_path=request.pdf_path,
-            save_extracted_text=request.save_extracted_text,
-        )
+
+        result = ingest_pdf(pdf_path=request.pdf_path)
         return IngestResponse(**result)
     
     except FileNotFoundError as exc:
